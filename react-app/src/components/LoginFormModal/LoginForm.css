@@ -1,0 +1,20 @@
+.loginbuttonmod {
+    border: none;
+    display: inline-block;
+    margin: 0;
+    background-color: #25252500;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 15px 15px;
+    transition: all 0.5s;
+    width: 7em;
+    border: 1px solid whitesmoke;
+    color: white;
+}
+.loginbuttonmod:hover {
+    background-color: #e8e8e8bb;
+    cursor: pointer;
+}

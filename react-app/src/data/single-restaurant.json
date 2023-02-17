@@ -1,0 +1,43 @@
+{
+    "User": {
+        "firstName": "Demo",
+        "id": 1,
+        "lastName": "User"
+    },
+    "address": "1540 W Alabama St Ste 300",
+    "avgStarRating": 3.5,
+    "city": "Houston",
+    "country": "USA",
+    "description": "delicious",
+    "id": 1,
+    "name": "Lua Viet Kitchen",
+    "numReviews": 2,
+    "phone_number": "(346) 227-7047",
+    "price": "$$",
+    "restaurantImages": [
+        {
+            "id": 1,
+            "preview": true,
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/rjDIjk_es-25_k93_9IGcA/o.jpg"
+        },
+        {
+            "id": 2,
+            "preview": false,
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/Jh3tsyOhaERSsBM8a_Mhdw/o.jpg"
+        },
+        {
+            "id": 3,
+            "preview": false,
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/lUaw3oxiS6nu3pbhDL-q-Q/o.jpg"
+        },
+        {
+            "id": 4,
+            "preview": false,
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/M-_bdyXbfgUzotZr5mty9Q/o.jpg"
+        }
+    ],
+    "state": "TX",
+    "user_id": 1,
+    "website": "http://www.luavietkitchen.com",
+    "zipcode": 77006
+}

@@ -1,0 +1,19 @@
+.signupmodalbutton {
+    border: none;
+    display: inline-block;
+    margin: 0;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+    background-color: #ff0008ba;
+    color: white;
+    border-radius: 9px;
+    padding: 14px 24px;
+    transition: all 0.5s;
+  }
+
+  .signupmodalbutton:hover {
+    background-color: rgb(255, 10, 55);
+    box-shadow: 0 5px 15px rgba(255, 10, 55, 0.4);
+  }
