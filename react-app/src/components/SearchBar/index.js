@@ -10,7 +10,10 @@ function RestaurantBySearch() {
     const { keyword } = useParams();
     console.log('@!@!@', keyword)
 
-    const currentUser = useSelector(state => state.session.user)
+    const singleRestaurant = useSelector((state) => {
+        console.log("singleRestaurantState", state)
+        return state.Restaurants.singleRestaurant
+    })
 
     useEffect(() => {
         dispatch(search_restaurants(keyword))
@@ -41,21 +44,23 @@ function RestaurantBySearch() {
                     return (
                     <div className='search-restaurant-body'>
                         <NavLink to={`/${el?.id}`}  key={i}>
-                            <div className='prevImage-box'>
+                            {/* <div className='prevImage-box'> */}
                                 <img src={el?.previewImage} className='prevImage' alt='images'></img>
-                            </div>
+                            {/* </div> */}
                             <div className='restaurant-infooooo'>
                                 <div className='restaurant-info1'>
                                     <div className='search-restaurant-name'><strong>{el.name}</strong></div>
-                                    <div className='avgRating'><i class="fa-solid fa-star"></i> is this possible ?</div>
+                                    {/* <div className="summary-line">
+                                        <span> <i class="fa-solid fa-star"></i>{singleRestaurant.avgStarRating}</span>
+                                        <span>{singleRestaurant.numReviews} reviews</span>
+                                    </div> */}
                                     <div className='search-restaurant-price-city'>{el.price} · {el.city}</div>
                                 </div>
                                 <div className='restaurant-info2'>
-                                    <p className='owned&operated'> <i class="fa-solid fa-people-roof"></i> Family-owned and operated · <i class="fa-regular fa-map"></i> Locally owned & operated</p>
+                                    <p className='owned_operated'> <i class="fa-solid fa-people-roof"></i> Family-owned and operated · <i class="fa-regular fa-map"></i> Locally owned & operated</p>
                                 <div className='waitlist-div'>
                                     <p><i class="fa-regular fa-clock"></i> Waitlist opens at 2pm</p>
                                 </div>
-                                {/* <div className='review-div'></div> */}
                                 </div>
                                 <div className='restaurant-info3'>
                                     <p><i className='checkmark' class="fa-sharp fa-solid fa-check"></i>Outdoor Seating </p>
