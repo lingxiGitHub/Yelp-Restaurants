@@ -4,12 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import SearchBar from './searchBar';
+import logo from '../LogoPhoto/lscxLogo.png';
 
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
-	// const history = useHistory()
-
-	// console.log(sessionUser)
 
 
 
@@ -18,7 +16,7 @@ function Navigation({ isLoaded }){
 			<div className='navigationBar'>
 				<div className='navBar-left'>
 					<div className='nav-logo'>
-						<NavLink className='homeButton' exact to="/">Home</NavLink>
+						<div><NavLink to="/"><img className="logo-img" src={logo}></img></NavLink></div>
 					</div>
 
 					<SearchBar/>
