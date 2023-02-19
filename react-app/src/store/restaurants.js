@@ -160,7 +160,7 @@ export const deleteRestaurant = (id) => ({
 
 export const deleteRestaurantThunk = (id) => async dispatch => {
 
-    const res = await csrfFetch(`/api/restaurants/${id}`, {
+    const res = await fetch(`/api/restaurants/${id}`, {
         method: "DELETE"
     })
     if (res.ok) {
@@ -223,6 +223,7 @@ export default function restaurantsReducer(state = initialState, action) {
 
         case DELETE_RESTAURANT: {
             const deleteRestaurantState = { ...state }
+            console.log("action",action)
             delete deleteRestaurantState.singleRestaurant[action.id]
             return deleteRestaurantState
         }
