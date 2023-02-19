@@ -12,7 +12,7 @@ export const createPhoto = (createdPhoto) => ({
 })
 export const addPhoto = (newPhoto, restaurantId) => async dispatch => {
 
-    const response = await csrfFetch(`/api/restaurants/${restaurantId}/images`, {
+    const response = await fetch(`/api/restaurants/${restaurantId}/images`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ export const deletePhoto = (photoId) => ({
 
 export const deletePhotoThunk = (photoId, restaurantId) => async dispatch => {
 
-    const res = await csrfFetch(`/api/restaurant-images/${photoId}`, {
+    const res = await fetch(`/api/restaurant-images/${photoId}`, {
             method: "DELETE"
         })
         if (res.ok) {
