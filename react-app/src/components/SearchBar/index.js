@@ -10,19 +10,20 @@ function RestaurantBySearch() {
     const { keyword } = useParams();
     console.log('@!@!@', keyword)
 
-    const singleRestaurant = useSelector((state) => {
-        console.log("singleRestaurantState", state)
-        return state.Restaurants.singleRestaurant
-    })
 
     useEffect(() => {
         dispatch(search_restaurants(keyword))
     }, [dispatch, keyword])
 
+
+    const singleRestaurant = useSelector((state) => {
+        return state.Restaurants.singleRestaurant
+    })
     const restaurant = useSelector(state => state.Restaurants.searchedRestaurants)
     const restaurantArr = Object.values(restaurant)
 
-    if(!restaurantArr) return null
+    // if(!restaurantArr) return null
+    // if(!singleRestaurant) return null
 
 
     return restaurantArr &&(
@@ -44,9 +45,7 @@ function RestaurantBySearch() {
                     return (
                     <div className='search-restaurant-body'>
                         <NavLink to={`/${el?.id}`}  key={i}>
-                            {/* <div className='prevImage-box'> */}
                                 <img src={el?.previewImage} className='prevImage' alt='images'></img>
-                            {/* </div> */}
                             <div className='restaurant-infooooo'>
                                 <div className='restaurant-info1'>
                                     <div className='search-restaurant-name'><strong>{el.name}</strong></div>

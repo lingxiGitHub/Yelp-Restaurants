@@ -7,6 +7,7 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import UserProfilePage from "./components/UserProfilePage";
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import Footer from "./components/Footer";
 import User from './components/User';
 
 import CreateNewReview from "./components/Reviews/CreateNewReview";
@@ -54,6 +55,7 @@ function App() {
           <Route exact path="/:restaurantId/reviews/:reviewId/update">
             <UpdateReview />
           </Route>
+          <Footer />
         </Switch>
       )}
     </>

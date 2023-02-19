@@ -7,6 +7,7 @@ import { ModalProvider, Modal } from "./context/Modal";
 import configureStore from "./store";
 import * as sessionActions from "./store/session";
 import App from "./App";
+import Footer from "./components/Footer";
 
 import "./index.css";
 
@@ -27,6 +28,7 @@ function Root() {
 				<BrowserRouter>
 					<App />
 					<Modal />
+					<Footer />
 				</BrowserRouter>
 			</Provider>
 		</ModalProvider>
