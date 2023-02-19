@@ -1,0 +1,55 @@
+.a.visited {
+    text-decoration : none;
+}
+
+.hidden {
+    display: none;
+  }
+
+.everyones-information-container {
+    margin-top: -4px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    font-family: Helvetica;
+    border-top: 1px solid rgb(211,211,211);
+    background-color: #FFFAF1;
+    position:fixed;
+    bottom:0;
+    left:0;
+    height: 54px
+}
+
+.github-button {
+    margin-top:  -18px;
+    color: black;
+}
+
+.le-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -8px;
+}
+
+.sarah-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -8px;
+}
+
+.ciara-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -8px;
+}
+
+.xiao-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -8px;
+}

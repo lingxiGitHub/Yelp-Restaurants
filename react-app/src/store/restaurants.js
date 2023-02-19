@@ -80,7 +80,7 @@ export const createRestaurant=(newRestaurant)=>({
 export const addRestaurantThunk = (newRestaurant) => async dispatch => {
     let createdRestaurantId;
     console.log("I am in addRestaurantThunk")
-    const response = await csrfFetch("/api/restaurants/", {
+    const response = await fetch("/api/restaurants/", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

@@ -1,10 +1,17 @@
-a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
 
-.restaurant-info1 {
-    color: black;
-    text-decoration: none!important;
-    font-family: Helvetica;
+
+a:link {
+    text-decoration: none;
+    display: flex;
+    padding: 10px
+}
+
+.search-restaurants-container {
+    width: 1024px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .search-restaurant-price-city {
@@ -25,17 +32,6 @@ a:visited { text-decoration: none; }
     text-decoration: underline;
 }
 
-.search-restaurant-img {
-    color: black;
-    text-decoration: none!important;
-    font-family: Helvetica;
-}
-
-.search-cap {
-    font-size: 25px;
-    font-family: Helvetica;
-}
-
 .prevImage {
     width: 200px;
     height: 200px;
@@ -44,6 +40,10 @@ a:visited { text-decoration: none; }
     border-bottom: 1px solid rgb(211,211,211);
 }
 
+.search-cap {
+    font-size: 25px;
+    font-family: Helvetica;
+}
 
 .search-restaurant-body {
     display: flex;
@@ -53,6 +53,25 @@ a:visited { text-decoration: none; }
     border-bottom: 1px solid rgb(211,211,211);
 }
 
+.restaurant-infooooo {
+    padding-left: 40px
+}
+
+.restaurant-info1 {
+    color: black;
+    text-decoration: none!important;
+    font-family: Helvetica;
+}
+
+.restaurant-info2 {
+    color: rgb(136,136,136);
+    text-decoration: none!important;
+    font-family: Helvetica;
+    font-size: 15px;
+    flex-direction: flex;
+    justify-content: space-between;
+}
+
 .restaurant-info3 {
     color: black;
     text-decoration: none!important;
@@ -60,10 +79,12 @@ a:visited { text-decoration: none; }
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* top: 50px; */
 }
 
 .search-captions {
     margin: 10px;
+    font-family: Helvetica;
 }
 
 .fa-sharp {
@@ -89,14 +110,6 @@ a:visited { text-decoration: none; }
     font-size: 15px;
 }
 
-.restaurant-info2 {
-    color: rgb(136,136,136);
-    text-decoration: none!important;
-    font-family: Helvetica;
-    font-size: 15px;
-    flex-direction: flex;
-    justify-content: space-between;
-}
 
 .avgRating {
     background: yellow;
