@@ -6,8 +6,10 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import SearchBar from './searchBar';
 import logo from '../Photos/lscxLogo.png';
+import OpenModalButton from "../OpenModalButton";
+import AddRestaurantModal from "../AddRestaurantModal";
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
 
 
@@ -16,30 +18,40 @@ function Navigation({ isLoaded }){
 		<nav className='navBar-container'>
 			<div className='navigationBar'>
 
-					<div className='nav-logo'>
-						<div><NavLink to="/"><img className="logo-img" src={logo}></img></NavLink></div>
-					</div>
+				<div className='nav-logo'>
+					<div><NavLink to="/"><img className="logo-img" src={logo}></img></NavLink></div>
+				</div>
 
-					<SearchBar/>
+				<SearchBar />
 
 				{(sessionUser === null) ?
-				<div className='navBar-right'>
+					<div className='navBar-right'>
+
+
 						<div className='signup-button-div'>
 							<NavLink className='signup-button' exact to='/signup'>Sign Up</NavLink>
 						</div>
 						<div className='login-button-div'>
 							<NavLink className='login-button' exact to='/login'>Log In</NavLink>
 						</div>
-				</div>
-				:
-				<div className='navBar-right'>
-					{/* <div className='notifs'>
-						<NotificationButton user={sessionUser}/>
-					</div> */}
-					<div className='user-profile'>
-						<ProfileButton user={sessionUser} />
 					</div>
-				</div>
+					:
+					<div className='navBar-right'>
+						{/* <div className="add-restaurant-button">
+
+
+							<OpenModalButton
+								buttonText="Add Restaurant"
+								modalComponent={<AddRestaurantModal />}
+							/>
+
+
+						</div> */}
+
+						<div className='user-profile'>
+							<ProfileButton user={sessionUser} />
+						</div>
+					</div>
 				}
 
 			</div>

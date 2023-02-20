@@ -194,7 +194,7 @@ export default function EditRestaurant({ singleRestaurant }) {
 
     return (
         <>
-            <h1>Edit Restaurant</h1>
+            <h2 className="edit-restaurant-text">Edit Restaurant</h2>
             {sessionLinks}
         </>
 

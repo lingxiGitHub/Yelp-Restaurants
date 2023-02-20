@@ -31,13 +31,17 @@ function RestaurantList() {
     return (
         isLoaded && (
             <>
-                {sessionUser && (
+                <div className="add-restaurant-button">
+                    {sessionUser && (
 
-                    <OpenModalButton
-                        buttonText="Add Restaurant"
-                        modalComponent={<AddRestaurantModal />}
-                    />
-                )}
+                        <OpenModalButton
+                            buttonText="Add Restaurant"
+                            modalComponent={<AddRestaurantModal />}
+                        />
+                    )}
+
+                </div>
+
 
                 <div className="restaurant-list">
                     {
