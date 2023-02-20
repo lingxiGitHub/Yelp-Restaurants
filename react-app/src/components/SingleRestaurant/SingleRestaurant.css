@@ -1,6 +1,6 @@
 .singlePhoto {
-    width: 200px;
-    height: 200px;
+
+    height: 100%;
     object-fit: cover;
 }
 
@@ -13,6 +13,98 @@
     margin: 5px
 }
 
-.summary-line span{
-    margin:5px
+.summary-line span {
+    margin: 5px
+}
+
+.photos {
+    height: 426px;
+    width: 100vw;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.top-section {
+    position: relative;
+
+}
+
+.summary-line {
+    position: absolute;
+    top: 175px;
+    color: white;
+    margin: 50px;
+    font-weight: 700;
+
+
+}
+
+h1 {
+    font-size: 48px;
+    margin: 10px;
+    white-space: nowrap;
+
+}
+
+.one-line-review {
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    margin: 10px;
+}
+
+.single-green-word {
+    color: rgb(4, 197, 133);
+
+
+}
+
+.buttons {
+    margin: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+.bottom-section {
+    display: flex;
+}
+
+.bottom-left-section {
+    margin-right: 20px;
+}
+
+
+.side-bar {
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 20px;
+    color: rgb(110, 112, 114);
+    font-weight: 600;
+    max-width: 365px;
+
+}
+
+.bottom-border {
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding: 20px;
+}
+
+.map-direction {
+    padding: 20px;
+}
+
+a {
+    color: rgb(2, 122, 151);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.single-page-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
