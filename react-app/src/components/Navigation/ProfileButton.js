@@ -5,6 +5,7 @@ import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import { useHistory } from "react-router-dom";
+import {getAllRestaurants} from "../../store/restaurants"
 import profpic from './aboutmepic.png'
 
 function ProfileButton({ user }) {
@@ -36,12 +37,16 @@ function ProfileButton({ user }) {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
+    // dispatch(getAllRestaurants())
+    history.push('/')
+
   };
 
   const loadProfile = (e) => {
     e.preventDefault();
     console.log(user)
     history.push(`/users/get/${user.id}`);
+    closeMenu()
   };
 
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
