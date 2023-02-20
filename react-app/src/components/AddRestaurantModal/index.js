@@ -1,9 +1,9 @@
 import "./AddRestaurant.css"
-import React, {  useState } from "react";
+import React, { useState } from "react";
 // import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../../context/Modal";
-import {  useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { addRestaurantThunk } from "../../store/restaurants";
 
 
@@ -64,9 +64,9 @@ function AddRestaurantModal() {
 
     return (
         <>
-            <h1>Add Restaurant</h1>
+            <h2 className="add-restaurant-text">Add Restaurant</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form className="add-restaurant-form" onSubmit={handleSubmit}>
 
                 <ul>
                     {errors.map((error, idx) => (
@@ -76,7 +76,7 @@ function AddRestaurantModal() {
 
 
                 <label>
-                    Name
+                    <span>Name</span>
                     <input
                         type="text"
                         value={name}
@@ -88,23 +88,23 @@ function AddRestaurantModal() {
                 </label>
 
                 <label>
-                    Price
+                    <span>Price</span>
                     <select
-                    onChange={(e) => setPrice(e.target.value)}
-                    value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                        value={price}
                     >
                         <option value="$">$</option>
                         <option value="$$">$$</option>
                         <option value="$$$">$$$</option>
                         <option value="$$$$">$$$$</option>
                         <option value="$$$$$">$$$$$</option>
-                        
+
                     </select>
 
                 </label>
 
                 <label>
-                    Address
+                    <span>Address</span>
                     <input
                         type="text"
                         value={address}
@@ -116,7 +116,7 @@ function AddRestaurantModal() {
                 </label>
 
                 <label>
-                    City
+                    <span>City</span>
                     <input
                         type="text"
                         value={city}
@@ -128,7 +128,7 @@ function AddRestaurantModal() {
                 </label>
 
                 <label>
-                    State
+                    <span>State</span>
                     <input
                         type="text"
                         value={state}
@@ -140,7 +140,7 @@ function AddRestaurantModal() {
                 </label>
 
                 <label>
-                    Zipcode
+                    <span>Zipcode</span>
                     <input
                         type="number"
                         value={zipcode}
@@ -152,7 +152,7 @@ function AddRestaurantModal() {
                 </label>
 
                 <label>
-                    Country
+                    <span>Country</span>
                     <input
                         type="text"
                         value={country}
@@ -164,7 +164,7 @@ function AddRestaurantModal() {
                 </label>
 
                 <label>
-                    Phone number
+                    <span>Phone number</span>
                     <input
                         type="text"
                         value={phone_number}
@@ -176,10 +176,10 @@ function AddRestaurantModal() {
                 </label>
 
 
-                
+
 
                 <label>
-                    website
+                    <span>website</span>
                     <input
                         type="text"
                         value={website}
@@ -191,7 +191,7 @@ function AddRestaurantModal() {
                 </label>
 
                 <label>
-                    Preview Image Url
+                    <span>Preview Image Url</span>
                     <input
                         type="text"
                         value={url}
@@ -203,7 +203,7 @@ function AddRestaurantModal() {
                 </label>
 
                 <label>
-                    Description
+                    <span>Description</span>
                     <input
                         type="textarea"
                         value={description}

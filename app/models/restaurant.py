@@ -25,7 +25,7 @@ class Restaurant(db.Model):
     website = db.Column(db.String(100), nullable=False)
     lat = db.Column(db.Numeric(50,2))
     lng = db.Column(db.Numeric(50, 2))
-    description = db.Column(db.String(255), nullable=False)
+    description = db.Column(db.String(500), nullable=False)
     createdAt = db.Column(db.DateTime, nullable=False, server_default=func.now())
     updatedAt = db.Column(db.DateTime, nullable=False, server_default=func.now())
 
