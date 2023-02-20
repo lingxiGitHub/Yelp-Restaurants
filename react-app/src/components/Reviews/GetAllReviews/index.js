@@ -69,8 +69,8 @@ export default function GetAllReviews({ restaurantId }) {
             <div className="review-body">Review: {review.review}</div>
           </div>
           <div className="delete-update">
-            {sessionUser && review.user.id === sessionUser.id ? <button className="delete-review" onClick={handleDelete(review.id, restaurantId)}>Delete Review</button> : ""}
-            {sessionUser && review.user.id === sessionUser.id ? <button className="update-review" onClick={handleUpdate(review, review.id)}>Update Review</button> : ""}
+            {sessionUser && review.user.id === sessionUser.id ? <button className="delete-review red-button" onClick={handleDelete(review.id, restaurantId)}>{whiteStar}<span className="delete-review-text">Delete Review</span></button> : ""}
+            {sessionUser && review.user.id === sessionUser.id ? <button className="update-review red-button" onClick={handleUpdate(review, review.id)}>{whiteStar}<span className="update-review-text">Update Review</span></button> : ""}
           </div>
         </div>
 
