@@ -3,7 +3,7 @@ from app.models import db, Restaurant, environment, SCHEMA
 def seed_restaurants():
   res1 = Restaurant(
     user_id=1, name="Lua Viet Kitchen", price="$$", address = "1540 W Alabama St Ste 300", city = "Houston",
-    state ="TX", zipcode= 77006, country="USA", phone_number = "(346) 227-7047", description = "delicious", website="http://www.luavietkitchen.com"
+    state ="TX", zipcode= 77006, country="USA", phone_number = "(346) 227-7047", description = "At LVK, we strive to bring elevated Vietnamese cuisine to Houstonians. We believe food should be made fresh using high quality ingredients. We're proud of the many local partnerships with similar vision and purpose. Sure it takes more time to source responsibly. It takes more effort to prepare food without MSG. But our valued guests deserve more than the standard fare. So come dine with us and xin mi (please enjoy)!", website="http://www.luavietkitchen.com"
   )
 
   res2 = Restaurant(
@@ -16,12 +16,12 @@ def seed_restaurants():
   )
   res4 = Restaurant(
     user_id=4, name="North Italia", price="$$", address = "1700 Post Oak Blvd Ste 190", city = "Houston",
-    state ="TX", zipcode= 77056, country="USA", phone_number = "(281) 605-4030", description = "delicious", website = "https://www.northitalia.com"
+    state ="TX", zipcode= 77056, country="USA", phone_number = "(281) 605-4030", description = "At North Italia, we're passionate about more than just our crave-worthy Italian food menu. We put our all into every detail, creating an environment that lets you know you're in for something special.", website = "https://www.northitalia.com"
   )
 
   res5 = Restaurant(
     user_id=5, name="Uchi", price="$$$$", address = "904 Westheimer Rd Ste A", city = "Houston",
-    state ="TX", zipcode= 77006, country="USA", phone_number = "(713) 522-4808", description = "delicious", website = "https://uchihouston.com"
+    state ="TX", zipcode= 77006, country="USA", phone_number = "(713) 522-4808", description = "Uchi, house in Japanese, is founded by James Beard Award-winning Chef Tyson Cole. A delicate balance of elevated food and impeccable service, Uchi offers non-traditional Japanese cuisine with signature tastings, sushi, and seasonal omakase.", website = "https://uchihouston.com"
   )
 
   res6 = Restaurant(
@@ -41,17 +41,17 @@ def seed_restaurants():
 
   res9 = Restaurant(
     user_id=9, name="Denica's Real Food Kitchen", price="$$", address = "2723 Castro Valley Blvd", city = "Castro Valley",
-    state ="California", zipcode= 94546, country="USA", phone_number = "(510)537-1100", description = "Established in 1999. The cookie man and the cake lady fell in love, and together with their 5 kids threw it all together into this new creation", website = "https://denicascafe.com"
+    state ="California", zipcode= 94546, country="USA", phone_number = "(510)537-1100", description = "Established in 1999. The cookie man and the cake lady fell in love, and together with their 5 kids threw it all together into this new creation, Denica's, in which evolved into what it is today, a bakery/ cafe/ breakfast joint with a lot of Aloha. ", website = "https://denicascafe.com"
   )
 
   res10 = Restaurant(
     user_id=10, name="Naked Fish", price="$$", address = "24703 Jackson Street", city = "Hayward",
-    state ="California", zipcode= 94544, country="USA", phone_number = "(510)887-4569", description = "Delicious and authentic sushi and Japanese cuisine!", website = "https://naked-fish.cafes-world.com"
+    state ="California", zipcode= 94544, country="USA", phone_number = "(510)887-4569", description = "Sushi Bar . Robata . Wine/Sake Lounge , New Management and Additions to the Menu", website = "https://naked-fish.cafes-world.com"
   )
 
   res11 = Restaurant(
     user_id=11, name="Tin Fu", price="$", address = "448 W Harder Road", city = "Hayward",
-    state ="California", zipcode= 94544, country="USA", phone_number = "(510)887-2398", description = "Delicious authentic Chinese cuisine!", website = "https://www.tinfuchineserestaurant.com/"
+    state ="California", zipcode= 94544, country="USA", phone_number = "(510)887-2398", description = "Delicious authentic Chinese cuisine! Established in 2000. We opened business since 2001.", website = "https://www.tinfuchineserestaurant.com/"
   )
 
   all_restaurants = [res1, res2, res3, res4, res5, res6, res7, res8 ,res9, res10, res11]
