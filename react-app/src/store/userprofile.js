@@ -3,9 +3,13 @@ const CreateProfile = 'session/CreateProfile';
 const EditProfile = 'session/EditProfile';
 const DeleteProfile = 'session/DeleteProfile';
 
-const getProfile = (user) => ({
+// const getProfile = (user) => ({
+//     type: GetUserProfile,
+//     payload: user
+// });
+const getProfile = (userInfo) => ({
     type: GetUserProfile,
-    payload: user
+    userInfo
 });
 
 const createNew = (user) => ({
@@ -22,17 +26,24 @@ const deleteProf = (user) => ({
     type: DeleteProfile,
     payload: user
 });
-
 export const getProfileThunk = (userId) => async (dispatch) => {
-    const response = await fetch(`/api/users/${userId}`, {
+    const response = await fetch(`/api/users/get/${userId}`, {
         headers: {
             'Content-Type': 'application/json',
         }
     });
-
-    if(response.ok){
-        const data = await response.json()
-        dispatch(getProfile(data));
+    const reviewsResult = await fetch(`/api/reviews/${userId}`);
+    if(response.ok && reviewsResult.ok){
+        const userInfo = await response.json()
+        const reviews = await reviewsResult.json()
+        console.log("printinguserInfo", userInfo, reviews)
+        let result = {}
+        result["id"] = userInfo.id
+        result["reviews"] = reviews
+        result["first_name"] = userInfo.first_name
+        result["last_name"] = userInfo.last_name
+        // console.log("****res", result)
+        dispatch(getProfile(result));
         return
     }
     return null
@@ -55,7 +66,7 @@ export const createProfileThunk = (profile) => async (dispatch) => {
 }
 
 export const editProfileThunk = (user, userId) => async (dispatch) => {
-    const response = await fetch(`/api/users/edit/${userId}`, {
+    const response = await fetch(`/api/users/${userId}/edit`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -80,7 +91,7 @@ export const deleteProfileThunk = (userId) => async (dispatch) => {
 }
 
 const initialState = {
-    userProfile: {}
+    // userProfile: {}
 };
 
 export default function userProfileReducer(state = initialState, action){
@@ -89,20 +100,24 @@ export default function userProfileReducer(state = initialState, action){
 
     switch (action.type){
         case GetUserProfile:
-            newState = { ...state, userProfile: { ...state.userProfile }}
-            newState.userProfile = action.user
+            // console.log("action in reducer", action.userInfo)
+            // console.log("old state in reducer", state)
+            newState = {...state}
+            newState.user = {...action.userInfo}
+            newState.user.reviews = {...action.userInfo.reviews}
+
             return { ...newState }
-        case CreateProfile:
-            newState.userProfile = action.user
-            return newState
-        case EditProfile:
-            newState = { userProfile: { ...state.userProfile } }
-            newState.userProfile[action.user.id] = action.user
-            return newState
-        case DeleteProfile:
-            newState = { ...state, userProfile: { ...state.userProfile } }
-            delete newState.userProfile[action.userId]
-            return newState
+        // case CreateProfile:
+        //     newState.userProfile = action.user
+        //     return newState
+        // case EditProfile:
+        //     newState = { userProfile: { ...state.userProfile } }
+        //     newState.userProfile[action.user.id] = action.user
+        //     return newState
+        // case DeleteProfile:
+        //     newState = { ...state, userProfile: { ...state.userProfile } }
+        //     delete newState.userProfile[action.userId]
+        //     return newState
         default:
             return state;
     }

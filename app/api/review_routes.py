@@ -22,6 +22,26 @@ def get_all_reviews():
   # return render_template("all_reviews.html", reviews=reviews)
   # return "all reviews"
 
+# get all reviews by user id
+@review_routes.route('/<int:id>')
+def get_reviews_by_userId(id):
+  print("*******id", id)
+  reviews = Review.query.filter(Review.user_id == id).all()
+  # print("******", reviews)
+  # data = [review.to_dict() for review in reviews]
+  data =[]
+  for review in reviews:
+    restaurants = Restaurant.query.filter(Restaurant.user_id == id)
+  #   user = User.query.get(id)
+  #   reviewImage = ReviewImage.query.filter(ReviewImage.review_id == review.id)
+    oneReviewInfor = {}
+  #   # oneReviewInfor["user"] = user.to_dict()
+    oneReviewInfor["restaurant"] = restaurants[0].to_dict()
+  #   # oneReviewInfor["reviewImages"] = [revImage.to_dict() for revImage in reviewImage]
+    oneReviewInfor.update(review.to_dict())
+    data.append(oneReviewInfor)
+  print("****data", data)
+  return data
 
 # get current user's reviews
 @review_routes.route('/current')

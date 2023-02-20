@@ -31,15 +31,16 @@ def user(id):
 @user_routes.route('/get/<int:id>', methods=['GET'])
 def get_user_profile(id):
     profile = User.query.filter(User.id == id).all()
-    if not profile:
-        return {'errors': ['No profile found']}, 401
-    profile_list = []
-    for prof in profile:
-        user = User.query.get(id)
-        reviews = Review.query.filter(Review.user_id == user.id).all()
-        review_obj = [review.to_dict() for review in reviews]
-        profile_list.append(prof.to_dict_express(review_obj))
-    return jsonify(profile_list)
+    print("printprofile", profile[0].to_dict())
+    # if not profile:
+    #     return {'errors': ['No profile found']}, 401
+    # profile_list = []
+    # for prof in profile:
+    #     user = User.query.get(id)
+    #     reviews = Review.query.filter(Review.user_id == user.id).all()
+    #     review_obj = [review.to_dict() for review in reviews]
+    #     profile_list.append(prof.to_dict_express(review_obj))
+    return profile[0].to_dict()
 
 
 #Create a new user profile
@@ -98,7 +99,7 @@ def edit_profile(id):
 def delete_profile(id):
     if authenticate():
         profile = User.query.get(id)
-        reviews = Review.query.filter(Review.user_id == user.id).all()
+        reviews = Review.query.filter(Review.user_id == id).all()
         if User:
             for review in reviews:
                 db.session.delete(review)

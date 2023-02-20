@@ -1,3 +1,11 @@
+.logintext{
+    color:rgb(226, 13, 13);
+    font-size:25px;
+    font-weight:bold;
+    position: relative;
+    display: flex;
+    margin-left: 390px;
+}
 .errors {
     height: 195px;
 }
@@ -42,7 +50,7 @@
     border-radius: 3px;
     margin: .5em;
     background-color:rgb(226, 13, 13);
-    font-size: large;
+    font-size: medium;
     font-weight: bolder;
     color: white;
     justify-content: center;
