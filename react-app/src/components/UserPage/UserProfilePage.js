@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory, NavLink } from "react-router-dom";
 import { getProfileThunk, editProfileThunk, deleteProfileThunk } from "../../store/userprofile";
 import { getAllReviewsByUserId } from "../../store/reviewsReducer";
+import {logout} from "../../store/session"
 import "./UserProfilePage.css"
 import starpic from './star.png'
 import human from './human.png'
@@ -44,6 +45,7 @@ export default function UserProfilePage() {
     }
     const handleDelete = (userId) => async(e) => {
         dispatch(deleteProfileThunk(userId))
+        dispatch(logout());
         history.push('/')
     }
 

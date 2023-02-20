@@ -56,7 +56,8 @@ export default function GetAllReviews({restaurantId}){
             <img src="https://a0.muscache.com/defaults/user_pic-225x225.png" alt=""/>
           </div>
           <div>
-            <div>user: {review.user.firstname}</div>
+            {/* <div>user: {review.user.first_name}</div> */}
+            <NavLink to={`/users/get/${review.user_id}`}>user:{review.user.first_name}</NavLink>
             <div>Time: {new Date(review.updatedAt).toLocaleDateString("en-US", options)}</div>
           </div>
 
