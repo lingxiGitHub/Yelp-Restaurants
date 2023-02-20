@@ -5,10 +5,10 @@ import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
-import UserProfilePage from "./components/UserProfilePage";
+import UserProfilePage from "./components/UserPage/UserProfilePage";
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Footer from "./components/Footer";
-import User from './components/User';
+// import User from './components/User';
 
 import CreateNewReview from "./components/Reviews/CreateNewReview";
 import RestaurantList from "./components/RestaurantList"
@@ -37,9 +37,9 @@ function App() {
           <Route path="/signup" exact={true}>
             <SignupFormPage />
           </Route>
-          <ProtectedRoute path="/users/:userId" exact={true}>
+          {/* <ProtectedRoute path="/users/:userId" exact={true}>
             <User />
-          </ProtectedRoute>
+          </ProtectedRoute> */}
           <Route path="/search/:keyword" >
             <RestaurantBySearch />
           </Route>
