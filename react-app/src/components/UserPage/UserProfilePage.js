@@ -38,7 +38,7 @@ export default function UserProfilePage() {
         reviews = Object.values(userTotalReviews);
     }
 
-
+    console.log("reviews", reviews)
 
     const handleUpdate = (profile, userId) => async (e) => {
         dispatch(editProfileThunk(userId))

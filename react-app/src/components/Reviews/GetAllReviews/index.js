@@ -60,7 +60,7 @@ export default function GetAllReviews({ restaurantId }) {
               </div>
               <div>
                 {/* <div className="user-title">{review.user.first_name} {review.user.last__name}</div> */}
-            <NavLink to={`/users/get/${review.user_id}`}>{review.user.first_name}</NavLink>
+                <NavLink to={`/users/get/${review.user_id}`}>{review.user.first_name}</NavLink>
                 <div className="review-time">{new Date(review.updatedAt).toLocaleDateString("en-US", options)}</div>
                 <div><RatingStar size="15" rating={review.rating} /></div>
               </div>

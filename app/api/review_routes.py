@@ -31,7 +31,7 @@ def get_reviews_by_userId(id):
   # data = [review.to_dict() for review in reviews]
   data =[]
   for review in reviews:
-    restaurants = Restaurant.query.filter(Restaurant.user_id == id)
+    restaurants = Restaurant.query.filter(Restaurant.id == review.restaurant_id)
   #   user = User.query.get(id)
   #   reviewImage = ReviewImage.query.filter(ReviewImage.review_id == review.id)
     oneReviewInfor = {}
