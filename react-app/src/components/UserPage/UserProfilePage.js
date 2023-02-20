@@ -31,6 +31,7 @@ export default function UserProfilePage() {
     let reviews = []
 
     let user =  useSelector((state) => state.user)
+    console.log("user", user)
 
     if(isLoaded){
         let userTotalReviews = user.user.reviews
@@ -78,7 +79,7 @@ export default function UserProfilePage() {
                         <img className="profpic" src={human}/>
                         <div className="stats">
                             <div className="name">
-                                {sessionUser.first_name} {sessionUser.last_name}
+                                {user.user.first_name} {user.user.last_name}
                             </div>
                             <div className="reviews">
                                 <img className="yelpstar" src={starpic}/>
