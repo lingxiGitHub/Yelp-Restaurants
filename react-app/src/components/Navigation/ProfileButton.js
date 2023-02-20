@@ -5,6 +5,7 @@ import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import { useHistory } from "react-router-dom";
+import profpic from './aboutmepic.png'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -57,7 +58,8 @@ function ProfileButton({ user }) {
             <p className='user-dropdown-username'>{user.username}</p>
             <p className= 'user-dropdown-email'>{user.email_address}</p>
             <li>
-              <button onClick={loadProfile}>My Profile</button>
+              <button className="profdropdownbutt" onClick={loadProfile}>
+                My Profile</button>
             </li>
             <div className="log-out-div-button">
               <button className='user-logout-button' onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
