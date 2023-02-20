@@ -27,12 +27,12 @@
 .create-review-container button{
   /* width: 30%;
   margin-top: 20px; */
-  width:260px;
+  /* width:260px;
   height:25px;
   margin:10px;
   border-radius: 10px;
   background-color:antiquewhite;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 .create-new-review-form{

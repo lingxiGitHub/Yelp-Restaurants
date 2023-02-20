@@ -104,7 +104,7 @@ a.visited {
   padding: none;
   border-radius: 4px;
   width: 50px;
-  position: absolute;
+  /* position: absolute; */
   background-color: white;
 }
 
