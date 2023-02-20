@@ -39,7 +39,7 @@ function ProfileButton({ user }) {
     dispatch(logout());
     // dispatch(getAllRestaurants())
     history.push('/')
-
+    closeMenu()
   };
 
   const loadProfile = (e) => {
