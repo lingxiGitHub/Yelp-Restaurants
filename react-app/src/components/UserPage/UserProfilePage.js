@@ -64,11 +64,11 @@ export default function UserProfilePage() {
             return (<div><img className="yelpstar" src={starpic}/></div>)
         }
     }
-    if (!sessionUser) {
-        return (
-            <h2>Loading ...</h2>
-        )
-    }
+    // if (!sessionUser) {
+    //     return (
+    //         <h2>Loading ...</h2>
+    //     )
+    // }
 
     return (
         isLoaded && (
@@ -88,7 +88,7 @@ export default function UserProfilePage() {
                         </div>
                     </div>
                 </div>
-                {sessionUser.id === parseInt(userId) && <div className="belowprofpic">
+                {sessionUser !== null && sessionUser.id === parseInt(userId) && <div className="belowprofpic">
                     {sessionUser.username}'s Profile
                     <div className="deletingarea">
                         {/* {sessionUser.id === parseInt(userId) ? <button className="updateprofile" onClick={handleUpdate(userId)}>Update your Profile</button> : ""}
