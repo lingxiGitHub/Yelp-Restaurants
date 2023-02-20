@@ -98,7 +98,12 @@ def restaurants():
         if image.restaurant_id == restaurant.id and image.preview == True:
           restaurant.preview=image.url
 
-
+    for restaurant in restaurants:
+      print(restaurant.id)
+      restaurant.oneReview= None
+      for review in reviews:
+        if review.restaurant_id == restaurant.id:
+          restaurant.oneReview=review.review
 
 
     data={
@@ -116,7 +121,8 @@ def restaurants():
       "description" : restaurant.description,
       "website":restaurant.website,
       "avgRating": round(restaurant.aveRating,2),
-      "previewImage": restaurant.preview
+      "previewImage": restaurant.preview,
+      "oneReview":restaurant.oneReview
     } for restaurant in restaurants],
     # "page":4,"size":5
     }

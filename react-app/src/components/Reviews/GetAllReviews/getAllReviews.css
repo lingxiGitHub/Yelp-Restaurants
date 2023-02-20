@@ -1,53 +1,76 @@
-.reviews-container{
-  width:500px;
+.reviews-container {
+  /* width: 500px; */
   display: flex;
   flex-direction: column;
 }
 
-.single-review{
-  margin:10px;
+.single-review {
+  margin: 10px;
 }
 
-.delete-review{
+/* .delete-review {
   font-size: 12px;
   margin: 5px;
   border-radius: 10px;
   background-color: antiquewhite;
   width: 100px;
   cursor: pointer
-}
-.update-review{
+} */
+
+/* .update-review {
   font-size: 12px;
   margin: 5px;
   border-radius: 10px;
   background-color: antiquewhite;
   width: 100px;
   cursor: pointer
-}
+} */
 
-.review-user-data{
+.review-user-data {
   font-size: 14px;
 
   margin-bottom: 5px;
-  display:flex;
+  display: flex;
 }
 
-.review-user-data img{
-  width:26px;
-  height:26px;
+.review-user-data img {
+  width: 26px;
+  height: 26px;
   border-radius: 20px;
   margin-top: 4px;
   margin-right: 12px;
 }
 
-.single-review-container{
+.single-review-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-right: 30px;
 }
-.delete-update{
-  margin-top:20px;
+
+.delete-update {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
+}
+
+.write-a-review {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.user-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.review-time {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.review-body {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 15px;
 }

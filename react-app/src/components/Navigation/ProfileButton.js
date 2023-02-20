@@ -4,9 +4,14 @@ import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
+import { useHistory } from "react-router-dom";
+import {getAllRestaurants} from "../../store/restaurants"
+import profpic from './aboutmepic.png'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
 
@@ -32,6 +37,16 @@ function ProfileButton({ user }) {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
+    // dispatch(getAllRestaurants())
+    history.push('/')
+
+  };
+
+  const loadProfile = (e) => {
+    e.preventDefault();
+    console.log(user)
+    history.push(`/users/get/${user.id}`);
+    closeMenu()
   };
 
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
@@ -39,17 +54,21 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+      <button onClick={openMenu} className='profileButton'>
+        <i class="fa-solid fa-user"></i>
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <li>{user.username}</li>
-            <li>{user.email_address}</li>
+            <p className='user-dropdown-username'>{user.username}</p>
+            <p className= 'user-dropdown-email'>{user.email_address}</p>
             <li>
-              <button onClick={handleLogout}>Log Out</button>
+              <button className="profdropdownbutt" onClick={loadProfile}>
+                My Profile</button>
             </li>
+            <div className="log-out-div-button">
+              <button className='user-logout-button' onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+            </div>
           </>
         ) : (
           <>

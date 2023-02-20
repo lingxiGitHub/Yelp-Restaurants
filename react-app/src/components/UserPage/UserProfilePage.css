@@ -1,0 +1,125 @@
+.mainlayer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.deetscontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.yelpstar{
+    width: 4%;
+
+}
+.topmost{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, .05);
+}
+.userinfo{
+    position: relative;
+    left: 400px;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    align-items: center;
+}
+.profpic{
+    position: relative;
+    top: 50px;
+    width: 215px;
+    height: 215px;
+    border: solid 1px black;
+    border-radius: 15px;
+}
+.stats{
+    margin: 50px 0px 10px 70px;
+}
+.name{
+    font-size: 27px;
+    font-weight: bold;
+    color: black;
+    font-family: Helvetica
+}
+.reviews{
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+}
+.belowprofpic{
+    position: relative;
+    top: 75px;
+    left: 400px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    width: 300px;
+    justify-content: left;
+    margin-right: 2.5%;
+    margin-top: 10px;
+}
+.deletingarea{
+    position: relative;
+    top: 15px;
+}
+.deleteprofile{
+    display: flex;
+    padding: .40em;
+    border: .30px solid grey;
+    width: 60%;
+    border-radius: 5px;
+    margin: .55em;
+    background-color:rgb(226, 13, 13);
+    font-size: medium;
+    font-weight: bolder;
+    color: white;
+    justify-content: center;
+}
+.midpart{
+    color:rgb(226, 13, 13);
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.width{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.reviewscontainer{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin: 40px 0px 0px 10px; */
+    margin-top: 40px;
+    margin-left: 485px;
+}
+.restaurantname{
+    color:blue;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: -10px;
+}
+.amountstars{
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+}
+.showit{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.horizontal{
+    width: 100%
+}
+.inbetween{
+    margin-top: 60px;
+    background-color: rgb(186, 181, 181);
+}

@@ -1,0 +1,24 @@
+.add-photo-form label {
+    display: block;
+    margin: 20px;
+}
+
+.add-photo-form input {
+    width: 250px;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+    margin: 5px;
+}
+
+
+.add-photo-form button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-photo-text{
+display: flex;
+justify-content: center;
+}
+

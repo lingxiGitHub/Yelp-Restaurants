@@ -34,7 +34,7 @@ function LoginFormPage() {
           <div className="authdeets">
               <input
                 className="inputdeet"
-                placeholder="Email address"
+                placeholder="Email"
                 type="text"
                 value={email_address}
                 onChange={(e) => setEmail_Address(e.target.value)}

@@ -2,45 +2,194 @@
   position: absolute;
 }
 
+a.visited {
+  text-decoration: none;
+  color: black;
+}
+
 .hidden {
   display: none;
+}
+
+.nav {
+  width: auto;
+  max-width: 90rem;
+  margin: 0 auto;
 }
 
 .search-button {
   background-color: red;
   border: none;
-  /* width: 20%; */
   height: 100%;
-  padding: 20;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  position: absolute;
+  right: 0;
+  margin: 0;
 }
 
 .search-input-values {
-  border: none;
-  padding: 10;
+  border: transparent solid;
+  padding: 8px 50px 8px 8px;
+  position: absolute;
+  top: 6.5px;
+  left: 20px;
+  width: 365px;
 }
 
-.fa-solid {
-  color: white
+.search-input-values:focus {
+  outline: none;
+}
+
+.log-out-div-button {
+  padding-top: 8px;
+
+  border-top: 1px solid rgb(211,211,211);
+}
+
+.search-bar-form {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .nav-search-container {
   box-shadow: 5px 1px 12px rgb(166, 162, 162);
+  width: 150px;
+  position: relative;
+  margin: 4px 10px 0px 5px;
+  border: none;
+  border-radius: 16px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+
+}
+
+.fa-solid {
+  color: white;
+  font-size: 1.3rem;
 }
 
 .navigationBar {
   font-family: Helvetica;
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 25px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgb(211,211,211);
+  position: relative;
+}
+
+.navBar-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid rgb(211, 211, 211);
 }
 
 .homeButton {
   color: black;
 }
 
-.user-profile {
+.login-button {
+  font-family: Helvetica;
+  text-decoration: none;
+  color: black;
+  border: 1px solid rgb(166, 162, 162);
+  padding: none;
+  border-radius: 4px;
+  width: 50px;
+  position: absolute;
+  background-color: white;
+}
+
+.signup-button {
+  font-family: Helvetica;
+  text-decoration: none;
+  color: white;
+  border: 1px solid red;
+  background-color: red;
+  border-radius: 4px;
+
+}
+
+.logo-img {
+  width: 120px;
+  height: 20%;
+  top: 30px;
+}
+
+.profileButton {
+  padding: 15px;
+  /* display: flex; */
+  margin-top: -5px;
+  margin-left: 4px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(200, 200, 200);
+  color: grey;
+}
+.profileButton:hover{
+  cursor: pointer;
+}
+
+.navBar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* width: 180px */
+}
+
+.user-logout-button {
+  border: none;
+  background-color: white;
+  font-size: 16px;
+}
+
+.fa-solid.fa-arrow-right-from-bracket {
+  color: black
+}
+
+.user-dropdown-email {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.user-dropdown-username{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.profile-dropdown {
+    right: 5px;
+    top: 60px;
+    width: 150px;
+    list-style-type: none;
+    background-color: white;
+    border-radius: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 18px;
+    padding-right: 12px;
+    z-index: 10;
+    box-shadow: 4px 2px 10px rgb(166, 162, 162);
+}
+.profdropdownbutt {
+  display: flex;
   padding: 8px;
+  margin: 20px;
+  margin-left: .5px;
+  margin-right: 20px;
+
+}
+
+.profdropdownbutt:hover {
+
+  background-color:rgb(226, 13, 13);
+  color: white;
   cursor: pointer;
 }
