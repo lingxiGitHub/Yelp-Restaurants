@@ -27,15 +27,15 @@ def seed():
         undo_users()
 
     seed_users()
-    print('users seeded')
+    # print('users seeded')
     seed_restaurants()
-    print('restaurants seeded')
+    # print('restaurants seeded')
     seed_restaurantImages()
-    print('restImages seeded')
+    # print('restImages seeded')
     seed_reviews()
-    print('reviews seeded')
+    # print('reviews seeded')
     seed_reviewImages()
-    print('reviewImages seeded')
+    # print('reviewImages seeded')
 
     # Add other seed functions here
 

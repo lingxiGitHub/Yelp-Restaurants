@@ -90,10 +90,10 @@ class User(db.Model, UserMixin):
         self.hashed_password = generate_password_hash(password)
 
     def check_password(self, password):
-        print("self password",self.password)
-        print("password input", password)
+        # print("self password",self.password)
+        # print("password input", password)
         checked_pw = check_password_hash(self.password, password)
-        print(checked_pw)
+        # print(checked_pw)
         return checked_pw
 
     def to_dict(self):

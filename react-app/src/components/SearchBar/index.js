@@ -8,7 +8,7 @@ import './SearchBar.css';
 function RestaurantBySearch() {
     const dispatch = useDispatch()
     const { keyword } = useParams();
-    console.log('@!@!@', keyword)
+    // console.log('@!@!@', keyword)
 
 
     useEffect(() => {

@@ -18,11 +18,11 @@ restaurant_routes = Blueprint('restaurants', __name__)
 def search_restaurant(keyword):
   restaurant_images= RestaurantImage.query.all()
 
-  print(keyword)
+  # print(keyword)
   queried_restaurants = Restaurant.query.filter(Restaurant.name.ilike(f"%{keyword}%")).all()
 
   for restaurant in queried_restaurants:
-    print(restaurant.id)
+    # print(restaurant.id)
     restaurant.preview= None
     for image in restaurant_images:
        if image.restaurant_id == restaurant.id and image.preview == True:
@@ -66,40 +66,40 @@ def restaurants():
 
     # rating=0
     # review_count=0
-    
+
     for restaurant in restaurants:
-      print("restaurant", restaurant.to_dict())
+      # print("restaurant", restaurant.to_dict())
       restaurants_reviews = Review.query.filter(
           Review.restaurant_id == restaurant.id).all()
-      print("!!!!!!!restaurants_reviews", restaurants_reviews)
-      print("!!!! len",len(restaurants_reviews))
+      # print("!!!!!!!restaurants_reviews", restaurants_reviews)
+      # print("!!!! len",len(restaurants_reviews))
       if len(restaurants_reviews)==0:
         restaurant.aveRating=0
       rating = 0
       review_count = 0
       # aveRating = None
       for review in restaurants_reviews:
-        
-        print("%%%%%%%%%%",review.to_dict())
+
+        # print("%%%%%%%%%%",review.to_dict())
         review_count=review_count+1
-        print("review_count", review_count)
+        # print("review_count", review_count)
         rating=rating+review.rating
-        
-        
+
+
         aveRating=rating/review_count
-        print(aveRating)
+        # print(aveRating)
         restaurant.aveRating=aveRating
 
 
     for restaurant in restaurants:
-      print(restaurant.id)
+      # print(restaurant.id)
       restaurant.preview= None
       for image in restaurant_images:
         if image.restaurant_id == restaurant.id and image.preview == True:
           restaurant.preview=image.url
 
     for restaurant in restaurants:
-      print(restaurant.id)
+      # print(restaurant.id)
       restaurant.oneReview= None
       for review in reviews:
         if review.restaurant_id == restaurant.id:
@@ -199,20 +199,20 @@ def restaurants_by_id(id):
         if image.preview == True:
             PreviewImage=image
 
-    print("---->",images)
+    # print("---->",images)
 
     reviews=Review.query.filter(Review.restaurant_id==id).all()
     numReviews=len(reviews)
 
-    print("---->reviews",reviews)
-    print("---->numReview",numReviews)
+    # print("---->reviews",reviews)
+    # print("---->numReview",numReviews)
 
 
 
     total_rating=0
     for review in reviews:
       total_rating=total_rating+review.rating
-    print("---->total_rating",total_rating)
+    # print("---->total_rating",total_rating)
     if numReviews ==0:
       avgStarRating=0
     else:
@@ -312,8 +312,8 @@ def create_restaurant_image(restaurantId):
 @login_required
 def edit_restaurant_by_restaurant_id(restaurantId):
   restaurant = Restaurant.query.get(restaurantId)
-  print("restaurant--->",restaurant.to_dict())
-  print("current user id ---->",current_user.id)
+  # print("restaurant--->",restaurant.to_dict())
+  # print("current user id ---->",current_user.id)
   if not restaurant:
     return {"errors": ["restaurant couldn't be found"]}, 404
 

@@ -47,11 +47,11 @@ def password_matches(form, field):
     password = field.data
     email_address = form.data['email_address']
     user = User.query.filter(User.email_address == email_address).first()
-    print("in validator", user)
+    # print("in validator", user)
     if not user:
         raise ValidationError('No such user exists.')
     if not user.check_password(password):
-        print("in validator", password)
+        # print("in validator", password)
         raise ValidationError('Password was incorrect.')
 
 

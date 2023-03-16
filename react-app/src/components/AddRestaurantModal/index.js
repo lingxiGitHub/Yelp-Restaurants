@@ -26,7 +26,7 @@ function AddRestaurantModal() {
     const [errors, setErrors] = useState([]);
     const { closeModal } = useModal();
     const sessionUser = useSelector(state => state.session.user)
-    console.log("sessionUser.id", sessionUser.id)
+    // console.log("sessionUser.id", sessionUser.id)
 
 
     const handleSubmit = (e) => {
@@ -55,7 +55,7 @@ function AddRestaurantModal() {
             .catch(
                 async (res) => {
                     const data = await res.json();
-                    console.log("data", data.errors)
+                    // console.log("data", data.errors)
                     if (data && data.errors) setErrors(data.errors);
                 }
             )

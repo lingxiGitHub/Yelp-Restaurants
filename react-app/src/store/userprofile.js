@@ -36,7 +36,7 @@ export const getProfileThunk = (userId) => async (dispatch) => {
     if(response.ok && reviewsResult.ok){
         const userInfo = await response.json()
         const reviews = await reviewsResult.json()
-        console.log("printinguserInfo", userInfo, reviews)
+        // console.log("printinguserInfo", userInfo, reviews)
         let result = {}
         result["id"] = userInfo.id
         result["reviews"] = reviews

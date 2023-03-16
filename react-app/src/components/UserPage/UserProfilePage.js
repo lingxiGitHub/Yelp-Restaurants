@@ -15,7 +15,7 @@ export default function UserProfilePage() {
     const sessionUser = useSelector(state => {
         return state.session.user
     })
-    console.log("sessionUser", sessionUser)
+    // console.log("sessionUser", sessionUser)
     const { userId } = useParams()
 
     const [isLoaded, setIsLoaded] = useState(false);
@@ -31,14 +31,14 @@ export default function UserProfilePage() {
     let reviews = []
 
     let user =  useSelector((state) => state.user)
-    console.log("user", user)
+    // console.log("user", user)
 
     if(isLoaded){
         let userTotalReviews = user.user.reviews
         reviews = Object.values(userTotalReviews);
     }
 
-    console.log("reviews", reviews)
+    // console.log("reviews", reviews)
 
     const handleUpdate = (profile, userId) => async (e) => {
         dispatch(editProfileThunk(userId))
