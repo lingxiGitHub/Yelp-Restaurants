@@ -1,0 +1,36 @@
+.add-restaurant-form label {
+
+    display: block;
+    margin: 20px;
+
+}
+
+.add-restaurant-form input {
+    width: 280px;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+    margin-left: 3px;
+
+
+}
+
+
+.add-restaurant-form button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+
+.add-restaurant-form span {
+    display: inline-block;
+    width: 125px;
+    font-size: 14px;
+}
+
+.add-restaurant-text {
+    display: flex;
+    justify-content: center;
+}

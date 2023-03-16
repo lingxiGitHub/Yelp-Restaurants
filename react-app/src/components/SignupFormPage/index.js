@@ -56,7 +56,7 @@ function SignupFormPage() {
 
   return (
     <>
-      <h1>Sign Up</h1>
+      <h1 className="signuptext">Sign Up</h1>
       <form onSubmit={uponSignUp}>
         <div className="errors">
           {errors.map((error, idx) => (
@@ -86,7 +86,7 @@ function SignupFormPage() {
               className="inputdeet"
               type="text"
               name="email_address"
-              placeholder="Email Address"
+              placeholder="Email"
               value={email_address}
               onChange={(e) => setEmail(e.target.value)}
               required

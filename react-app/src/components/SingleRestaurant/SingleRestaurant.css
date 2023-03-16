@@ -6,7 +6,8 @@
 
 .side-bar {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    margin-right: 40px;
 }
 
 .only-for-owner button {
@@ -93,7 +94,11 @@ h1 {
 }
 
 .map-direction {
-    padding: 20px;
+    /* padding: 20px; */
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0; */
 }
 
 a {
@@ -107,4 +112,71 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 60px;
+}
+
+
+.amenities {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.indi-amenity {
+    flex-basis: 40%;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.indi-amenity .icon_svg {
+    margin: 5px;
+}
+
+.restaurant-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(45, 46, 47);
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.website-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0;
+}
+
+
+.phone-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0;
+
+    padding-left: 10px;
+}
+
+.address-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+.bottom-left-section {
+    margin-left: 40px;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.restaurant-details{
+  
 }

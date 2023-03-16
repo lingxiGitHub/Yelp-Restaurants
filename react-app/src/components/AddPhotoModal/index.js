@@ -1,5 +1,5 @@
 import "./AddPhoto.css"
-import React, {  useState } from "react";
+import React, { useState } from "react";
 // import { login } from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
@@ -33,12 +33,12 @@ function AddPhotoModal({ restaurantId }) {
     }
 
     return (
-        <>
-            <h1>Add Photo</h1>
+        <div>
+            <h2 className="add-photo-text"><span>Add Photo</span></h2>
 
-            <form onSubmit={handleSubmit}>
+            <form className="add-photo-form" onSubmit={handleSubmit}>
 
-                <ul>
+                <ul className="error-display">
                     {errors.map((error, idx) => (
                         <li key={idx}>{error}</li>
                     ))}
@@ -56,7 +56,7 @@ function AddPhotoModal({ restaurantId }) {
 
                 </label>
 
-                <label>
+                {/* <label>
                     preview
                     <input
                         type="text"
@@ -66,10 +66,10 @@ function AddPhotoModal({ restaurantId }) {
 
                     />
 
-                 </label>
+                 </label> */}
                 <button type="submit">Add Photo</button>
             </form>
-        </>
+        </div>
     )
 
 

@@ -2,6 +2,8 @@
 
 body {
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
 button {
@@ -38,4 +40,8 @@ button {
 .white-star {
     fill: white;
     padding-right: 8px;
+}
+
+#modal-content{
+    border-radius: 5px;
 }

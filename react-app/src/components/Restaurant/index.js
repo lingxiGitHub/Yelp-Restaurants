@@ -21,7 +21,7 @@ function Restaurant({ restaurant }) {
                     <div className="small-words">
                         <div>{restaurant.price} <b>·</b> {restaurant.city}</div>
                         <div><span className="green-word">Open</span> until 9:30PM</div>
-                        <div>{reviewCloud}"this is review preview"</div>
+                        <div>{reviewCloud} {restaurant.oneReview}</div>
                         <div className="three-tick">
                             <span className="delivery">{tick}Outdoor seating</span>
                             <span className="delivery">{tick}Delivery</span>
