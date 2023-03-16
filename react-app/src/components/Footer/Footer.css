@@ -27,6 +27,16 @@
     color: black;
 }
 
+.linkedin-button {
+    margin-top:  -18px;
+    color: black;
+}
+
+.link-div {
+    display: flex;
+    flex-direction: row;
+}
+
 .le-div {
     display: flex;
     flex-direction: column;
