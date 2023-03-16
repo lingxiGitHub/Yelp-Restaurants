@@ -44,7 +44,7 @@ function ProfileButton({ user }) {
 
   const loadProfile = (e) => {
     e.preventDefault();
-    console.log(user)
+    // console.log(user)
     history.push(`/users/get/${user.id}`);
     closeMenu()
   };

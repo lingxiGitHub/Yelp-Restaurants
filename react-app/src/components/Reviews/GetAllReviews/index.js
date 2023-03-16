@@ -24,7 +24,7 @@ export default function GetAllReviews({ restaurantId }) {
     dispatch(fetchAllReviewsByRestaurantId(restaurantId))
   }, [dispatch])
   const reviews = Object.values(allReviews);
-  console.log("reviews ", reviews)
+  // console.log("reviews ", reviews)
 
   let userReview = null;
   let isOwnedBySessionUser = false;

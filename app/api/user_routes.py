@@ -31,7 +31,7 @@ def user(id):
 @user_routes.route('/get/<int:id>', methods=['GET'])
 def get_user_profile(id):
     profile = User.query.filter(User.id == id).all()
-    print("printprofile", profile[0].to_dict())
+    # print("printprofile", profile[0].to_dict())
     # if not profile:
     #     return {'errors': ['No profile found']}, 401
     # profile_list = []

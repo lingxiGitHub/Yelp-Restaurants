@@ -25,7 +25,7 @@ def get_all_reviews():
 # get all reviews by user id
 @review_routes.route('/<int:id>')
 def get_reviews_by_userId(id):
-  print("*******id", id)
+  # print("*******id", id)
   reviews = Review.query.filter(Review.user_id == id).all()
   # print("******", reviews)
   # data = [review.to_dict() for review in reviews]
@@ -40,7 +40,7 @@ def get_reviews_by_userId(id):
   #   # oneReviewInfor["reviewImages"] = [revImage.to_dict() for revImage in reviewImage]
     oneReviewInfor.update(review.to_dict())
     data.append(oneReviewInfor)
-  print("****data", data)
+  # print("****data", data)
   return data
 
 # get current user's reviews
@@ -148,7 +148,7 @@ def create_review_by_restaurant_id(id):
     db.session.commit()
     return review.to_dict()
   if form.errors:
-    print("%%%%%% errors form routes ", form.errors)
+    # print("%%%%%% errors form routes ", form.errors)
     return {"errors": {"review": "Review text is required",
     "rating": "Rating must be an integer from 1 to 5",}}, 400
 

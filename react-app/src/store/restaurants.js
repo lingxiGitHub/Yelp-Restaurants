@@ -23,7 +23,7 @@ export const search_restaurants = (keyword) => async (dispatch) =>{
     if (response.ok){
      // Constant variable to specify the action type (“restaurants/searchedRestaurants”)
       const data = await response.json()
-      console.log('data from backend', data)
+    //   console.log('data from backend', data)
       dispatch(search(data))
       return data
     }
@@ -65,7 +65,7 @@ export const getSingleRestaurant = (restaurantId) => async dispatch => {
         // console.log("----->>>>detailObj", detailObj)
         dispatch(loadSingleRestaurant(detailObj))
     } else {
-        console.log("fetch single restaurant failed")
+        // console.log("fetch single restaurant failed")
     }
 }
 
@@ -79,7 +79,7 @@ export const createRestaurant=(newRestaurant)=>({
 
 export const addRestaurantThunk = (newRestaurant) => async dispatch => {
     let createdRestaurantId;
-    console.log("I am in addRestaurantThunk")
+    // console.log("I am in addRestaurantThunk")
     const response = await fetch("/api/restaurants/", {
         method: "POST",
         headers: {
@@ -89,9 +89,9 @@ export const addRestaurantThunk = (newRestaurant) => async dispatch => {
     });
     if (response.ok) {
         const createdRestaurant = await response.json()
-        console.log("createdRestaurant", createdRestaurant)
+        // console.log("createdRestaurant", createdRestaurant)
         createdRestaurantId = createdRestaurant.id
-        console.log("createdRestaurantId", createdRestaurantId)
+        // console.log("createdRestaurantId", createdRestaurantId)
     }else{
         console.log("add restaurant failed here")
     }
@@ -223,19 +223,19 @@ export default function restaurantsReducer(state = initialState, action) {
 
         case DELETE_RESTAURANT: {
             const deleteRestaurantState = { ...state }
-            console.log("action",action)
+            // console.log("action",action)
             delete deleteRestaurantState.singleRestaurant[action.id]
             return deleteRestaurantState
         }
 
         case SEARCH_RESTAURANTS:
-            console.log('state from reducer', state)
-            console.log('123456', action.restaurants.keyword)
+            // console.log('state from reducer', state)
+            // console.log('123456', action.restaurants.keyword)
             const newState = { ...state, searchedRestaurants: {} };
             action.restaurants.Restaurants.forEach((restaurant) => {
                 newState.searchedRestaurants[restaurant.id] = restaurant;
             });
-            console.log('MEOW@@#',newState)
+            // console.log('MEOW@@#',newState)
             return newState;
 
 
