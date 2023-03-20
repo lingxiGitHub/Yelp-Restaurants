@@ -22,3 +22,5 @@ LSCX, is a website for restaurant internet search and review service
 
 ## Welcome to search/filter page, on this page you can see the search result, and if you click on restaurant, you can jump into correspond restaurant detail page.
 ![image](https://user-images.githubusercontent.com/49548213/225539336-901b4651-db27-4ad1-873b-94d8bbf171ce.png)
+
+
