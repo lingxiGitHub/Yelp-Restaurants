@@ -44,7 +44,7 @@ function RestaurantBySearch() {
                     // console.log('el from restaurant array mapping', el)
                     return (
                     <div className='search-restaurant-body'>
-                        <NavLink to={`/${el?.id}`}  key={i}>
+                        <NavLink to={`/single/${el?.id}`}  key={i}>
                                 <img src={el?.previewImage} className='prevImage' alt='images'></img>
                             <div className='restaurant-infooooo'>
                                 <div className='restaurant-info1'>
