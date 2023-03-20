@@ -21,7 +21,7 @@ export const addPhoto = (newPhoto, restaurantId) => async dispatch => {
     });
     if (response.ok) {
         const createdPhoto = await response.json()
-        dispatch(createPhoto(createdPhoto))
+        await dispatch(createPhoto(createdPhoto))
         dispatch(getSingleRestaurant(restaurantId))
 
     }
@@ -42,7 +42,7 @@ export const deletePhotoThunk = (photoId, restaurantId) => async dispatch => {
             method: "DELETE"
         })
         if (res.ok) {
-            dispatch(deletePhoto(photoId))
+            await dispatch(deletePhoto(photoId))
             dispatch(getSingleRestaurant(restaurantId))
         }
 

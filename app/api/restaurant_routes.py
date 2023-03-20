@@ -191,6 +191,7 @@ def restaurants():
 @restaurant_routes.route('/<int:id>')
 def restaurants_by_id(id):
     SingleRestaurant = Restaurant.query.get(id)
+    print("!!!!",SingleRestaurant.to_dict())
     theUser=User.query.get(SingleRestaurant.user_id)
     # print("--->",theUser)
     images = RestaurantImage.query.filter(RestaurantImage.restaurant_id==id).all()
@@ -232,7 +233,6 @@ def restaurants_by_id(id):
       "phone_number" : SingleRestaurant.phone_number,
       "description" : SingleRestaurant.description,
       "website":SingleRestaurant.website,
-      "website":"http://www.luavietkitchen.com",
       "User":{
         "id": theUser.id,
         "firstName": theUser.first_name,

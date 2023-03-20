@@ -58,11 +58,11 @@ export const loadSingleRestaurant = (detailObj) => ({
 export const getSingleRestaurant = (restaurantId) => async dispatch => {
     // console.log("!!!!restaurantId at getSinglerestaurant", restaurantId)
     const response = await fetch(`/api/restaurants/${restaurantId}`)
-    // console.log("--->response from single restaurant", response)
+    console.log("--->response from single restaurant", response)
     if (response.ok) {
 
         const detailObj = await response.json()
-        // console.log("----->>>>detailObj", detailObj)
+        console.log("----->>>>detailObj", detailObj)
         dispatch(loadSingleRestaurant(detailObj))
     } else {
         // console.log("fetch single restaurant failed")
@@ -144,7 +144,7 @@ export const updateRestaurantThunk = (restaurant, user_id) => async dispatch => 
 
     if (res.ok) {
         const updatedRestaurant = await res.json()
-        dispatch(updateSingleRestaurant(updatedRestaurant))
+        await dispatch(updateSingleRestaurant(updatedRestaurant))
         dispatch(getSingleRestaurant(updatedRestaurant.id))
         return updatedRestaurant
     }
@@ -164,7 +164,7 @@ export const deleteRestaurantThunk = (id) => async dispatch => {
         method: "DELETE"
     })
     if (res.ok) {
-        dispatch(deleteRestaurant(id))
+        await dispatch(deleteRestaurant(id))
         dispatch(getAllRestaurants())
     }
 
