@@ -8,13 +8,12 @@ import Navigation from "./components/Navigation";
 import UserProfilePage from "./components/UserPage/UserProfilePage";
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Footer from "./components/Footer";
-// import User from './components/User';
-
 import CreateNewReview from "./components/Reviews/CreateNewReview";
 import RestaurantList from "./components/RestaurantList"
 import SingleRestaurant from "./components/SingleRestaurant"
 import UpdateReview from "./components/Reviews/UpdateReview";
 import RestaurantBySearch from "./components/SearchBar";
+import NotFound from "./components/NotFound";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,16 +36,13 @@ function App() {
           <Route path="/signup" exact={true}>
             <SignupFormPage />
           </Route>
-          {/* <ProtectedRoute path="/users/:userId" exact={true}>
-            <User />
-          </ProtectedRoute> */}
           <Route path="/search/:keyword" >
             <RestaurantBySearch />
           </Route>
           <Route exact path="/">
             <RestaurantList />
           </Route>
-          <Route exact path="/:restaurantId">
+          <Route exact path="/single/:restaurantId">
             <SingleRestaurant />
           </Route>
           <Route exact path="/:restaurantId/create-review">
@@ -54,6 +50,9 @@ function App() {
           </Route>
           <Route exact path="/:restaurantId/reviews/:reviewId/update">
             <UpdateReview />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
           <Footer />
         </Switch>

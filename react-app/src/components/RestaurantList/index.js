@@ -47,7 +47,7 @@ function RestaurantList() {
                     {
                         allRestaurants.map(restaurant => {
                             return (
-                                <Link className="restaurant-list" key={restaurant.id} to={`/${restaurant.id}`}>
+                                <Link className="restaurant-list" key={restaurant.id} to={`/single/${restaurant.id}`}>
                                     <Restaurant restaurant={restaurant} />
                                 </Link>
                             )
