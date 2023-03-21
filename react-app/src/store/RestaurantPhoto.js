@@ -78,7 +78,7 @@ export default function photoReducer(state = initialState, action) {
         case LOADPHOTO:
             const newPhotos = {}
             action.allPhotos.forEach(photo => {
-                console.log("photo reducer", photo)
+                // console.log("photo reducer", photo)
                 newPhotos[photo.id] = photo
             })
 
@@ -88,10 +88,13 @@ export default function photoReducer(state = initialState, action) {
                     ...newPhotos
                 }
             };
-        // case ADD_PHOTO:
-        //     const newPhotoState = { ...state }
-        //     newPhotoState.restaurant[action.id] = action.createdPhoto
-        //     return newPhotoState
+        case DELETE_PHOTO: {
+            const deletePhotoState = { ...state }
+            console.log("action",action)
+            console.log("inside state",deletePhotoState)
+            delete deletePhotoState.allPhotos[action.photoId]
+            return deletePhotoState
+        }
 
         default:
             return state

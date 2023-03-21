@@ -57,7 +57,7 @@ export default function DisplayPhotos({ singleRestaurant }) {
                                         className="delete-photo"
                                         onClick={async () => {
                                             await dispatch(deletePhotoThunk(photo.id, photo.restaurant_id));
-                                            await closeModal();
+                                            // await closeModal();
                                             getRestaurantPhotos()
                                         }}
                                     >
