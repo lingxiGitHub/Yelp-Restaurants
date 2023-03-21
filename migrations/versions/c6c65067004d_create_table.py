@@ -79,7 +79,7 @@ def upgrade():
                         '(CURRENT_TIMESTAMP)'), nullable=False),
                     sa.Column('updatedAt', sa.DateTime(), server_default=sa.text(
                         '(CURRENT_TIMESTAMP)'), nullable=False),
-                    sa.Column('createdByUserId', sa.String(), nullable=True),
+                    sa.Column('createdByUserId', sa.Integer(), nullable=True),
                     sa.ForeignKeyConstraint(
                         ['createdByUserId'], ['users.id'], ),
                     sa.ForeignKeyConstraint(

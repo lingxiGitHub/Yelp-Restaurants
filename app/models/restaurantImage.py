@@ -22,7 +22,7 @@ class RestaurantImage(db.Model):
                           server_default=func.now())
     updatedAt = db.Column(db.DateTime, nullable=False,
                           server_default=func.now())
-    createdByUserId = db.Column(db.String,db.ForeignKey(add_prefix_for_prod("users.id")) )
+    createdByUserId = db.Column(db.Integer,db.ForeignKey(add_prefix_for_prod("users.id")) )
     
     
     restaurant = db.relationship("Restaurant", back_populates="restaurant_images")
