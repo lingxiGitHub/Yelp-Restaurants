@@ -41,27 +41,27 @@ export default function UserProfilePage() {
     // console.log("reviews", reviews)
 
     const handleUpdate = (profile, userId) => async (e) => {
-        dispatch(editProfileThunk(userId))
+        await dispatch(editProfileThunk(userId))
         history.push(`/users/${userId}/edit`)
     }
     const handleDelete = (userId) => async(e) => {
-        dispatch(deleteProfileThunk(userId))
-        dispatch(logout());
+        await dispatch(deleteProfileThunk(userId))
+        await dispatch(logout());
         history.push('/')
     }
 
 
     const ratings = (num) => {
         if (num === 5) {
-            return (<div><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/></div>)
+            return (<div><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /></div>)
         } else if (num === 4) {
-            return (<div><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/></div>)
+            return (<div><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /></div>)
         } else if (num === 3) {
-            return (<div><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/></div>)
+            return (<div><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /></div>)
         } else if (num === 2) {
-            return (<div><img className="yelpstar" src={starpic}/><img className="yelpstar" src={starpic}/></div>)
+            return (<div><img className="yelpstar" src={starpic} alt="" /><img className="yelpstar" src={starpic} alt="" /></div>)
         } else if (num === 1) {
-            return (<div><img className="yelpstar" src={starpic}/></div>)
+            return (<div><img className="yelpstar" src={starpic} alt="" /></div>)
         }
     }
     // if (!sessionUser) {

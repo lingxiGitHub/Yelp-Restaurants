@@ -13,6 +13,7 @@ import DeleteRestaurant from "../DeleteRestaurant";
 // import DeletePhoto from "../DeletePhotoModal";
 import GetAllReviews from "../Reviews/GetAllReviews";
 import RatingStar from "../RatingStar";
+import DisplayPhotos from "../DisplayPhotos";
 
 
 function getMap(str) {
@@ -111,6 +112,10 @@ function SingleRestaurant() {
                                     />
 
 
+                                    <OpenModalButton
+                                        buttonText="See all photos"
+                                        modalComponent={<DisplayPhotos singleRestaurant={singleRestaurant} />}
+                                    />
                                     <OpenModalButton
                                         buttonText="Edit Restaurant"
                                         modalComponent={<EditRestaurant singleRestaurant={singleRestaurant} />}

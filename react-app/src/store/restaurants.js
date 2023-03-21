@@ -58,11 +58,11 @@ export const loadSingleRestaurant = (detailObj) => ({
 export const getSingleRestaurant = (restaurantId) => async dispatch => {
     // console.log("!!!!restaurantId at getSinglerestaurant", restaurantId)
     const response = await fetch(`/api/restaurants/${restaurantId}`)
-    console.log("--->response from single restaurant", response)
+    // console.log("--->response from single restaurant", response)
     if (response.ok) {
 
         const detailObj = await response.json()
-        console.log("----->>>>detailObj", detailObj)
+        // console.log("----->>>>detailObj", detailObj)
         dispatch(loadSingleRestaurant(detailObj))
     } else {
         // console.log("fetch single restaurant failed")

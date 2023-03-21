@@ -1,0 +1,25 @@
+.indi-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.photo-container {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    column-gap: 12px;
+    row-gap: 12px;
+    /* margin-top: 12px; */
+    padding: 12px 32px 12px 32px;
+    overflow: scroll;
+    background-color: rgb(235, 235, 235);
+}
+
+
+.photo-li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

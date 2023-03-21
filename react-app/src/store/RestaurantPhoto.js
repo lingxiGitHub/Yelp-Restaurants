@@ -2,6 +2,25 @@
 import { csrfFetch } from "./csrf"
 import { getSingleRestaurant } from "./restaurants";
 
+
+//load photos
+const LOADPHOTO = "photos/loadPhotos"
+export const loadPhotos = (list) => ({
+    type: LOADPHOTO,
+    allPhotos: list
+})
+
+export const getRestaurantPhotos = (restaurantId) => async dispatch => {
+    const response = await fetch(`/api/restaurant-images/${restaurantId}/images`)
+    if (response.ok) {
+        const listObj = await response.json()
+
+        // console.log("back end fetched list", listObj)
+        dispatch(loadPhotos(listObj))
+    }
+}
+
+
 //add photo
 const ADD_PHOTO = "photos/addPhoto"
 export const createPhoto = (createdPhoto) => ({
@@ -39,12 +58,12 @@ export const deletePhoto = (photoId) => ({
 export const deletePhotoThunk = (photoId, restaurantId) => async dispatch => {
 
     const res = await fetch(`/api/restaurant-images/${photoId}`, {
-            method: "DELETE"
-        })
-        if (res.ok) {
-            await dispatch(deletePhoto(photoId))
-            dispatch(getSingleRestaurant(restaurantId))
-        }
+        method: "DELETE"
+    })
+    if (res.ok) {
+        await dispatch(deletePhoto(photoId))
+        dispatch(getSingleRestaurant(restaurantId))
+    }
 
 
 }
@@ -53,14 +72,22 @@ export const deletePhotoThunk = (photoId, restaurantId) => async dispatch => {
 
 const initialState = {}
 
-export default function reviewReducer(state = initialState, action) {
+export default function photoReducer(state = initialState, action) {
     switch (action.type) {
 
-        // case DELETE_REVIEW:
-        //     const deleteReviewState = { ...state }
-        //     // console.log("look if undefined", deleteReviewState)
-        //     delete deleteReviewState.spot[action.id]
-        //     return deleteReviewState;
+        case LOADPHOTO:
+            const newPhotos = {}
+            action.allPhotos.forEach(photo => {
+                console.log("photo reducer", photo)
+                newPhotos[photo.id] = photo
+            })
+
+            return {
+                ...state,
+                allPhotos: {
+                    ...newPhotos
+                }
+            };
         case ADD_PHOTO:
             const newPhotoState = { ...state }
             newPhotoState.restaurant[action.id] = action.createdPhoto
