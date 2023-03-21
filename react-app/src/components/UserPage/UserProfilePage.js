@@ -88,15 +88,10 @@ export default function UserProfilePage() {
                         </div>
                     </div>
                 </div>
-                {sessionUser !== null && sessionUser.id === parseInt(userId) && <div className="belowprofpic">
+                {/* {sessionUser !== null && sessionUser.id === parseInt(userId) && <div className="belowprofpic">
                     {sessionUser.username}'s Profile
-                    <div className="deletingarea">
-                        {/* {sessionUser.id === parseInt(userId) ? <button className="updateprofile" onClick={handleUpdate(userId)}>Update your Profile</button> : ""}
-                        {sessionUser.id === parseInt(userId) ? <button className="deleteprofile" onClick={handleDelete(userId)}>Delete your Profile</button> : ""} */}
-                        {/* <button className="updateprofile" onClick={handleUpdate(userId)}>Update your Profile</button> */}
-                        {/* <button className="deleteprofile" onClick={handleDelete(userId)}>Delete your Profile</button> */}
-                    </div>
-                </div>}
+                  
+                </div>} */}
             </div>
 
 

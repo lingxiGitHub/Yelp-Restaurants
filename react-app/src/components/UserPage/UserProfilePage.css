@@ -1,26 +1,31 @@
-.mainlayer{
+.mainlayer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .deetscontainer {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
-.yelpstar{
-    width: 4%;
 
 }
-.topmost{
+
+.yelpstar {
+    width: 2%;
+
+}
+
+.topmost {
     margin-top: 50px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: rgba(0, 0, 0, .05);
 }
-.userinfo{
+
+.userinfo {
     position: relative;
     left: 400px;
     display: flex;
@@ -28,7 +33,8 @@
     width: 60%;
     align-items: center;
 }
-.profpic{
+
+.profpic {
     position: relative;
     top: 50px;
     width: 150px;
@@ -36,22 +42,29 @@
     border: solid 1px black;
     border-radius: 15px;
 }
-.stats{
+
+.stats {
     margin: 50px 0px 10px 70px;
 }
-.name{
+
+.name {
     font-size: 27px;
     font-weight: bold;
     color: black;
     font-family: Helvetica
 }
-.reviews{
+
+.reviews {
     font-size: 17px;
     font-weight: bold;
     color: black;
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
 }
-.belowprofpic{
+
+.belowprofpic {
     position: relative;
     top: 75px;
     left: 400px;
@@ -63,36 +76,42 @@
     margin-right: 2.5%;
     margin-top: 10px;
 }
-.deletingarea{
+
+.deletingarea {
     position: relative;
     top: 15px;
 }
-.deleteprofile{
+
+.deleteprofile {
     display: flex;
     padding: .40em;
     border: .30px solid grey;
     width: 60%;
     border-radius: 5px;
     margin: .55em;
-    background-color:rgb(226, 13, 13);
+    background-color: rgb(226, 13, 13);
     font-size: medium;
     font-weight: bolder;
     color: white;
     justify-content: center;
 }
-.midpart{
-    color:rgb(226, 13, 13);
+
+.midpart {
+    color: rgb(226, 13, 13);
     font-weight: bold;
     font-size: 25px;
     margin-top: 30px;
     margin-right: 20px;
+    margin: 0px;
 }
-.width{
+
+.width {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.reviewscontainer{
+
+.reviewscontainer {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -101,25 +120,37 @@
     margin-top: 40px;
     margin-left: 485px;
 }
-.restaurantname{
-    color:blue;
+
+.restaurantname {
+    color: blue;
     font-size: 17px;
     font-weight: bold;
     margin-left: -10px;
 }
-.amountstars{
+
+.amountstars {
     display: flex;
     flex-direction: row;
     font-weight: bold;
 }
-.showit{
+
+.showit {
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
-.horizontal{
+
+.horizontal {
     width: 100%
 }
-.inbetween{
+
+.inbetween {
     margin-top: 60px;
     background-color: rgb(186, 181, 181);
+}
+
+.horizontalline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
