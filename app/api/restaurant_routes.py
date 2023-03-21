@@ -299,6 +299,7 @@ def create_restaurant_image(restaurantId):
            restaurant_id = int(restaurantId),
            url = request.get_json()["url"],
            preview = request.get_json()["preview"],
+           createdByUserId = current_user.id
          )
       db.session.add(restaurantImage)
       db.session.commit()

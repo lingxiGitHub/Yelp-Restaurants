@@ -15,6 +15,7 @@ import UpdateReview from "./components/Reviews/UpdateReview";
 import RestaurantBySearch from "./components/SearchBar";
 import NotFound from "./components/NotFound";
 
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);

@@ -8,4 +8,5 @@ class RestaurantImageForm(FlaskForm):
   url = StringField("url",validators=[DataRequired()])
   preview = BooleanField("preview")
 
+
   

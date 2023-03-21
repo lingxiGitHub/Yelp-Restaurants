@@ -88,10 +88,10 @@ export default function photoReducer(state = initialState, action) {
                     ...newPhotos
                 }
             };
-        case ADD_PHOTO:
-            const newPhotoState = { ...state }
-            newPhotoState.restaurant[action.id] = action.createdPhoto
-            return newPhotoState
+        // case ADD_PHOTO:
+        //     const newPhotoState = { ...state }
+        //     newPhotoState.restaurant[action.id] = action.createdPhoto
+        //     return newPhotoState
 
         default:
             return state

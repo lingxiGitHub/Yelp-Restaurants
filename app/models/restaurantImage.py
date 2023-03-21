@@ -22,7 +22,11 @@ class RestaurantImage(db.Model):
                           server_default=func.now())
     updatedAt = db.Column(db.DateTime, nullable=False,
                           server_default=func.now())
+    createdByUserId = db.Column(db.String,db.ForeignKey(add_prefix_for_prod("users.id")) )
+    
+    
     restaurant = db.relationship("Restaurant", back_populates="restaurant_images")
+    user = db.relationship("User",back_populates="restaurant_images")
 
     def to_dict(self):
         return {
@@ -32,4 +36,5 @@ class RestaurantImage(db.Model):
             'preview': self.preview,
             'createdAt': self.createdAt,
             'updatedAt': self.updatedAt,
+            "createdByUserId":self.createdByUserId
         }

@@ -79,7 +79,8 @@ class User(db.Model, UserMixin):
 
     reviews = db.relationship("Review", back_populates="user")
     restaurants = db.relationship("Restaurant", back_populates="user")
-
+    restaurant_images = db.relationship(
+        "RestaurantImage", back_populates="user", cascade="all, delete-orphan")
 
     @property
     def password(self):

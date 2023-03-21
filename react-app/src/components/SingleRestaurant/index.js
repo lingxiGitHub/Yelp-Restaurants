@@ -95,6 +95,12 @@ function SingleRestaurant() {
                             <div className="price">Unclaimed <b>·</b> {singleRestaurant.price}</div>
                             <div className="price"><span className="single-green-word">Open</span> until 9:30PM</div>
                         </div>
+
+                        <OpenModalButton
+                            className="see-all-photo"
+                            buttonText="See all photos"
+                            modalComponent={<DisplayPhotos singleRestaurant={singleRestaurant} />}
+                        />
                     </div>
 
 
@@ -112,10 +118,7 @@ function SingleRestaurant() {
                                     />
 
 
-                                    <OpenModalButton
-                                        buttonText="See all photos"
-                                        modalComponent={<DisplayPhotos singleRestaurant={singleRestaurant} />}
-                                    />
+                             
                                     <OpenModalButton
                                         buttonText="Edit Restaurant"
                                         modalComponent={<EditRestaurant singleRestaurant={singleRestaurant} />}

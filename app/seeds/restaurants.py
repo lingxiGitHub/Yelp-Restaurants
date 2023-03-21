@@ -49,12 +49,9 @@ def seed_restaurants():
     state ="California", zipcode= 94544, country="USA", phone_number = "(510)887-4569", description = "Sushi Bar . Robata . Wine/Sake Lounge , New Management and Additions to the Menu", website = "https://naked-fish.cafes-world.com"
   )
 
-  res11 = Restaurant(
-    user_id=11, name="Tin Fu", price="$", address = "448 W Harder Road", city = "Hayward",
-    state ="California", zipcode= 94544, country="USA", phone_number = "(510)887-2398", description = "Delicious authentic Chinese cuisine! Established in 2000. We opened business since 2001.", website = "https://www.tinfuchineserestaurant.com/"
-  )
 
-  all_restaurants = [res1, res2, res3, res4, res5, res6, res7, res8 ,res9, res10, res11]
+
+  all_restaurants = [res1, res2, res3, res4, res5, res6, res7, res8 ,res9, res10]
   add_restaurants = [db.session.add(res) for res in all_restaurants]
   db.session.commit()
 
