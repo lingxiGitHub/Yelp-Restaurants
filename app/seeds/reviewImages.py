@@ -34,9 +34,7 @@ def seed_reviewImages():
         review_id=15, url="https://s3-media0.fl.yelpcdn.com/bphoto/I5fs-KC6yZTvSGIFC5JF2g/o.jpg"
     )
 
-    revImage9 = ReviewImage(
-        review_id=17, url="https://s3-media0.fl.yelpcdn.com/bphoto/fgwXFsAhW3NjmlnJuw8S9A/o.jpg"
-    )
+
 
     revImage10 = ReviewImage(
         review_id=19, url="https://s3-media0.fl.yelpcdn.com/bphoto/GjbD0Zn0U64ED85DE7ePcw/o.jpg"
@@ -48,7 +46,7 @@ def seed_reviewImages():
     # db.session.commit()
 
 
-    all_reviewImages = [revImage1, revImage2, revImage3, revImage4, revImage5, revImage6, revImage7, revImage8, revImage9, revImage10]
+    all_reviewImages = [revImage1, revImage2, revImage3, revImage4, revImage5, revImage6, revImage7, revImage8, revImage10]
 
     add_reviewImages = [db.session.add(revImage) for revImage in all_reviewImages]
     db.session.commit()
