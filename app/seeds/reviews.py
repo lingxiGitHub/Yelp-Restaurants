@@ -65,13 +65,6 @@ def seed_reviews():
         user_id=9, restaurant_id=10, review="good food", rating=5
     )
 
-    review17 = Review(
-        user_id=9, restaurant_id=11, review="OMG! Delicious! Had the Salmon healthy plate and my friend had the chicken healthy plate. Both were delicious", rating=5
-    )
-
-    review18 = Review(
-        user_id=10, restaurant_id=11, review="average.", rating=2
-    )
 
     review19 = Review(
         user_id=10, restaurant_id=1, review="My coworkers and I want to try new restaurants together on a regular basis.", rating=4
@@ -137,13 +130,8 @@ def seed_reviews():
         user_id=12, restaurant_id=10, review="Looking forward to returning, especially can't wait to try their desserts next time!", rating=5
     )
 
-    review35 = Review(
-        user_id=7, restaurant_id=11, review="The service was amazing", rating=5
-    )
+   
 
-    review36 = Review(
-        user_id=13, restaurant_id=11, review="Some of the best chilaquiles I've had! So much to choose from and so many various options of chilaquiles and more.", rating=5
-    )
 
 
 
