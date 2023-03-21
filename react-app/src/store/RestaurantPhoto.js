@@ -90,8 +90,8 @@ export default function photoReducer(state = initialState, action) {
             };
         case DELETE_PHOTO: {
             const deletePhotoState = { ...state }
-            console.log("action",action)
-            console.log("inside state",deletePhotoState)
+            // console.log("action",action)
+            // console.log("inside state",deletePhotoState)
             delete deletePhotoState.allPhotos[action.photoId]
             return deletePhotoState
         }
