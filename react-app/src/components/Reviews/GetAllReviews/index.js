@@ -37,7 +37,7 @@ export default function GetAllReviews({ restaurantId }) {
     // console.log("handle delete ")
     await dispatch(deleteReviewById(reviewId))
       .then(() => dispatch(fetchAllReviewsByRestaurantId(restaurantId)))
-    history.push(`/${restaurantId}`)
+    history.push(`/single/${restaurantId}`)
   }
 
   const handleUpdate = (review, reviewId) => async (e) => {

@@ -56,7 +56,7 @@ export default function CreateNewReview(){
       // console.log("&&&&&&&&& errors from bad data", errors)
       if (errors.length === 0)
       {
-        history.push(`/${restaurantId}`)
+        history.push(`/single/${restaurantId}`)
       }
   }
 

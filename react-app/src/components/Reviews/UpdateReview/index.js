@@ -41,7 +41,7 @@ export default function UpdateReview(){
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
       });
-      history.push(`/${oldReview.restaurant_id}`)
+      history.push(`/single/${oldReview.restaurant_id}`)
   }
 
 

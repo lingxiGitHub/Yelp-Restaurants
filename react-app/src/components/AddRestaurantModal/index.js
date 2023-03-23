@@ -51,7 +51,7 @@ function AddRestaurantModal() {
 
 
         return dispatch(addRestaurantThunk(newRestaurant))
-            .then(createdRestaurantId => { history.push(`/${createdRestaurantId}`); closeModal() })
+            .then(createdRestaurantId => { history.push(`/single/${createdRestaurantId}`); closeModal() })
             .catch(
                 async (res) => {
                     const data = await res.json();
