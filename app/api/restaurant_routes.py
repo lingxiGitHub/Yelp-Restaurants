@@ -19,9 +19,11 @@ def search_restaurant(keyword):
   restaurant_images= RestaurantImage.query.all()
 
   # print(keyword)
-  queried_restaurants = Restaurant.query.filter(Restaurant.name.ilike(f"%{keyword}%")).all()
+  # queried_restaurants = Restaurant.query.filter(Restaurant.name.startswith(f"%{keyword}%")).all()
+  queried_restaurants = Restaurant.query.filter(Restaurant.name.startswith(keyword)).all()
 
   for restaurant in queried_restaurants:
+    
     # print(restaurant.id)
     restaurant.preview= None
     for image in restaurant_images:
