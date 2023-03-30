@@ -52,7 +52,7 @@ export default function DisplayPhotos({ singleRestaurant }) {
 
                             <li className="photo-li">
                                 <img className="indi-photo" src={photo.url}></img>
-                                {+photo.createdByUserId === +sessionUser.id ? (
+                                {sessionUser && +photo.createdByUserId === +sessionUser.id ? (
                                     <button
                                         className="delete-photo"
                                         onClick={async () => {
