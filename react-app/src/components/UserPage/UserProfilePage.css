@@ -16,6 +16,9 @@
     width: 2%;
 
 }
+.user-portrait {
+    width: 20%;
+}
 
 .topmost {
     margin-top: 50px;
@@ -25,6 +28,11 @@
     background-color: rgba(0, 0, 0, .05);
 }
 
+.portrait-and-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 .userinfo {
     position: relative;
     left: 400px;
@@ -32,8 +40,11 @@
     flex-direction: row;
     width: 60%;
     align-items: center;
+    justify-content: space-around;
 }
-
+.update-userprofile {
+    margin-right: 30px;
+}
 .profpic {
     position: relative;
     top: 50px;

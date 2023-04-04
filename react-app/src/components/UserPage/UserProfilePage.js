@@ -1,16 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory, NavLink } from "react-router-dom";
 import { getProfileThunk, editProfileThunk, deleteProfileThunk } from "../../store/userprofile";
 import { getAllReviewsByUserId } from "../../store/reviewsReducer";
-import {logout} from "../../store/session"
+import OpenModalButton from "../OpenModalButton";
+import { logout } from "../../store/session"
 import "./UserProfilePage.css"
 import starpic from './star.png'
-import human from './human.png'
+import UpdateProfile from "./UpdateProfile";
 
 export default function UserProfilePage() {
     const dispatch = useDispatch()
     const history = useHistory()
+
+    const [showMenu, setShowMenu] = useState(false);
+    const ulRef = useRef();
+
+    const openMenu = () => {
+        if (showMenu) return;
+        setShowMenu(true);
+    };
+
+    useEffect(() => {
+        if (!showMenu) return;
+
+        const closeMenu = (e) => {
+            if (!ulRef.current.contains(e.target)) {
+                setShowMenu(false);
+            }
+        };
+
+        document.addEventListener("click", closeMenu);
+
+        return () => document.removeEventListener("click", closeMenu);
+    }, [showMenu]);
 
     const sessionUser = useSelector(state => {
         return state.session.user
@@ -21,8 +44,7 @@ export default function UserProfilePage() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        dispatch(getProfileThunk(userId)).then(() =>
-        {
+        dispatch(getProfileThunk(userId)).then(() => {
             return setIsLoaded(true)
         });
     }, [dispatch]);
@@ -30,10 +52,10 @@ export default function UserProfilePage() {
 
     let reviews = []
 
-    let user =  useSelector((state) => state.user)
-    // console.log("user", user)
+    let user = useSelector((state) => state.user)
+    console.log("user", user)
 
-    if(isLoaded){
+    if (isLoaded) {
         let userTotalReviews = user.user.reviews
         reviews = Object.values(userTotalReviews);
     }
@@ -44,7 +66,7 @@ export default function UserProfilePage() {
         await dispatch(editProfileThunk(userId))
         history.push(`/users/${userId}/edit`)
     }
-    const handleDelete = (userId) => async(e) => {
+    const handleDelete = (userId) => async (e) => {
         await dispatch(deleteProfileThunk(userId))
         await dispatch(logout());
         history.push('/')
@@ -72,44 +94,50 @@ export default function UserProfilePage() {
 
     return (
         isLoaded && (
-        <div className="mainlayer">
-            <div className="deetscontainer">
-                <div className="topmost">
-                    <div className="userinfo">
-                        <img className="profpic" src={human}/>
-                        <div className="stats">
-                            <div className="name">
-                                {user.user.first_name} {user.user.last_name}
+            <div className="mainlayer">
+                <div className="deetscontainer">
+                    <div className="topmost">
+                        <div className="userinfo">
+                            {/* <img className="yelpstar" src={`${user.user.portrait}`} alt="" /> */}
+                            <div className="portrait-and-info">
+                                <img className="user-portrait" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWJzdHJhY3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+                                <div className="stats">
+                                    <div className="name">
+                                        {user.user.first_name} {user.user.last_name}
+                                    </div>
+                                    <div className="reviews">
+                                        {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="reviews">
-                                <img className="yelpstar" src={starpic}/>
-                                {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}
-                            </div>
+                            {sessionUser && user.user.id == sessionUser.id ? <div className="update-userprofile"><OpenModalButton
+                                buttonText="Update User"
+                                // onItemClick={closeMenu}
+                                modalComponent={<UpdateProfile user={user.user}/>}
+                            /></div> : ""}
                         </div>
                     </div>
-                </div>
-                {/* {sessionUser !== null && sessionUser.id === parseInt(userId) && <div className="belowprofpic">
+                    {/* {sessionUser !== null && sessionUser.id === parseInt(userId) && <div className="belowprofpic">
                     {sessionUser.username}'s Profile
-                  
                 </div>} */}
-            </div>
-
-
-            <div class="horizontalline">
-                <div className="midpart">Reviews</div> <hr class="horizontal"/>
-            </div>
-            {reviews.map(rev => (
-                <div className="width">
-                    <div className="reviewscontainer">
-                        <NavLink to={`/${rev.restaurant_id}`}>
-                            <p className="restaurantname">{rev.restaurant.name}</p>
-                        </NavLink>
-                        <div className="amountstars">Rating:  {ratings(parseInt(rev.rating))}</div>
-                        <p className="showit">Review:</p><div>{rev.review}</div>
-                        <div><hr className="inbetween"></hr></div>
-                    </div>
                 </div>
-            ))}
-        </div>
-    ))
+
+
+                <div class="horizontalline">
+                    <div className="midpart">Reviews</div> <hr class="horizontal" />
+                </div>
+                {reviews.map(rev => (
+                    <div className="width">
+                        <div className="reviewscontainer">
+                            <NavLink to={`/${rev.restaurant_id}`}>
+                                <p className="restaurantname">{rev.restaurant.name}</p>
+                            </NavLink>
+                            <div className="amountstars">Rating:  {ratings(parseInt(rev.rating))}</div>
+                            <p className="showit">Review:</p><div>{rev.review}</div>
+                            <div><hr className="inbetween"></hr></div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        ))
 }
