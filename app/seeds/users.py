@@ -72,27 +72,27 @@ def seed_users():
     bobbie = User(
         username='bobbie', email_address='bobbie@aa.io', password='password', first_name="Bobbie", last_name="Jackson")
     tommy = User(
-        username='Tommy-Bahama', email_address='Tommy_Bahama@hotmail.com', password='password', first_name="Tommy", last_name="Bahama")
+        username='Tommy Bahama', email_address='Tommy_Bahama@hotmail.com', password='password', first_name="Tommy", last_name="Bahama")
     eleanor = User(
-        username='Eleanor-Auker', email_address='Eleanor_Auker@hotmail.com', password='password', first_name="Eleanor", last_name="Auker")
+        username='Eleanor Auker', email_address='Eleanor_Auker@hotmail.com', password='password', first_name="Eleanor", last_name="Auker")
     james = User(
-        username='James-Bacher', email_address='James_Bacher@hotmail.com', password='password', first_name="James", last_name="Bacher")
+        username='James Bacher', email_address='James_Bacher@hotmail.com', password='password', first_name="James", last_name="Bacher")
     hazel = User(
-        username='Hazel-Zane', email_address='Hazel_Zane@hotmail.com', password='password', first_name="Hazel", last_name="Zane")
+        username='Hazel Zane', email_address='Hazel_Zane@hotmail.com', password='password', first_name="Hazel", last_name="Zane")
     ellis = User(
-        username='Ellis-Wink', email_address='Ellis_Wink@hotmail.com', password='password', first_name="Ellis", last_name="Wink")
+        username='Ellis Wink', email_address='Ellis_Wink@hotmail.com', password='password', first_name="Ellis", last_name="Wink")
     audrey = User(
-        username='Audrey-Wherry', email_address='Audrey_Wherry@hotmail.com', password='password', first_name="Audrey", last_name="Wherry")
+        username='Audrey Wherry', email_address='Audrey_Wherry@hotmail.com', password='password', first_name="Audrey", last_name="Wherry")
     olive = User(
-        username='Olive-Tomson', email_address='Olive_Tomson@hotmail.com', password='password', first_name="Olive", last_name="Tomson")
+        username='Olive Tomson', email_address='Olive_Tomson@hotmail.com', password='password', first_name="Olive", last_name="Tomson")
     william = User(
-        username='William-Tandy', email_address='William_Tandy@hotmail.com', password='password', first_name="William", last_name="Tandy")
+        username='William Tandy', email_address='William_Tandy@hotmail.com', password='password', first_name="William", last_name="Tandy")
     charlie = User(
-        username='Charlie-Staple', email_address='Charlie_Staple@hotmail.com', password='password', first_name="Charlie", last_name="Staple")
+        username='Charlie Staple', email_address='Charlie_Staple@hotmail.com', password='password', first_name="Charlie", last_name="Staple")
     ivy = User(
-        username='Ivy-Rosemond', email_address='Ivy_Rosemond@hotmail.com', password='password', first_name="Ivy", last_name="Rosemond")
+        username='Ivy Rosemond', email_address='Ivy_Rosemond@hotmail.com', password='password', first_name="Ivy", last_name="Rosemond")
     ella = User(
-        username='Ella-Tolly', email_address='Ella_Tolly@hotmail.com', password='password', first_name="Ella", last_name="Tolly")
+        username='Ella Tolly', email_address='Ella_Tolly@hotmail.com', password='password', first_name="Ella", last_name="Tolly")
     adrian = User(
         username='Adrian', email_address='Adrian@gmail.com', password='adrianiscool', first_name='Adrian', last_name='Tran')
 

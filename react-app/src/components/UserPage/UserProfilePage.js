@@ -98,12 +98,12 @@ export default function UserProfilePage() {
                 <div className="deetscontainer">
                     <div className="topmost">
                         <div className="userinfo">
-                            {/* <img className="yelpstar" src={`${user.user.portrait}`} alt="" /> */}
                             <div className="portrait-and-info">
-                                <img className="user-portrait" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWJzdHJhY3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+                            <img className="user-portrait" src={`${user.user.portrait}`} alt="" />
+                                {/* <img className="user-portrait" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWJzdHJhY3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" /> */}
                                 <div className="stats">
                                     <div className="name">
-                                        {user.user.first_name} {user.user.last_name}
+                                        {user.user.username}
                                     </div>
                                     <div className="reviews">
                                         {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}
@@ -127,7 +127,7 @@ export default function UserProfilePage() {
                     <div className="midpart">Reviews</div> <hr class="horizontal" />
                 </div>
                 {reviews.map(rev => (
-                    <div className="width">
+                    <div className="width" key={rev.id}>
                         <div className="reviewscontainer">
                             <NavLink to={`/${rev.restaurant_id}`}>
                                 <p className="restaurantname">{rev.restaurant.name}</p>

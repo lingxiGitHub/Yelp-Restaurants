@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-// import { fetchUpdateUser, fetchUserProfileInfo } from '../../../store/userProfile'
+import { editProfileThunk, getProfileThunk } from '../../store/userprofile'
 import { useModal } from '../../context/Modal.js'
 import './UpdateProfile.css'
 
@@ -10,7 +10,7 @@ export default function UpdateProfile({user}){
   const dispatch = useDispatch()
   const history = useHistory()
   const { closeModal } = useModal()
-
+  console.log("user from UserProfilePage", user)
   const [username, setUsername] = useState(user.username)
   const [portrait, setPortrait] = useState(user.portrait)
   const [errors, setErrors] = useState([])
@@ -18,20 +18,20 @@ export default function UpdateProfile({user}){
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    // const newUser = {
-    //   username,
-    //   portrait
-    // }
+    const newUser = {
+      username,
+      portrait
+    }
 
-    // const updatedUserProfile = await dispatch(fetchUpdateUser(newUser, user.id))
+    const updatedUserProfile = await dispatch(editProfileThunk(newUser, user.id))
 
-    // if (typeof(updatedUserProfile) == "number"){
-    //   dispatch(fetchUserProfileInfo(user.id))
-    //     .then(closeModal())
-
-    // }else{
-    //   setErrors(updatedUserProfile)
-    // }
+    if (typeof(updatedUserProfile) == "number"){
+      dispatch(getProfileThunk(user.id))
+        .then(closeModal())
+    }else{
+      setErrors(updatedUserProfile)
+    }
+    // history.push('/')
   }
   return (
     <div className='update-profile-container'>
@@ -39,11 +39,11 @@ export default function UpdateProfile({user}){
       <div>
         <form className='update-profile-form' onSubmit={handleUpdate}>
 
-        <ul className='errors-container'>
+        {/* <ul className='errors-container'>
           {errors.map((error, idx) => (
               <li  className='update-profile-errors-item' key={idx}>{error}</li>
           ))}
-        </ul>
+        </ul> */}
 
           <lable className='update-profile-item'>
             <span>username:</span>

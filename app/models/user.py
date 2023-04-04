@@ -25,7 +25,7 @@ class User(db.Model, UserMixin):
                           server_default=func.now())
     updatedAt = db.Column(db.DateTime, nullable=False,
                           server_default=func.now())
-    portrait = db.Column(db.String(255),  nullable=False, default="https://static.vecteezy.com/system/resources/previews/016/412/547/non_2x/cute-happy-boy-doodle-portrait-smiling-curly-child-illustration-hand-drawing-avatar-male-baby-face-vector.jpg")
+    portrait = db.Column(db.String(255),  nullable=False, default="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWJzdHJhY3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60")
 
     reviews = db.relationship("Review", back_populates="user")
     restaurants = db.relationship("Restaurant", back_populates="user")

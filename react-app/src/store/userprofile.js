@@ -43,6 +43,7 @@ export const getProfileThunk = (userId) => async (dispatch) => {
         result["first_name"] = userInfo.first_name
         result["last_name"] = userInfo.last_name
         result["portrait"] = userInfo.portrait
+        result["username"] = userInfo.username
         // console.log("****res", result)
         dispatch(getProfile(result));
         return
@@ -77,7 +78,9 @@ export const editProfileThunk = (user, userId) => async (dispatch) => {
     if(response.ok){
         const data = await response.json();
         dispatch(editProf(data));
-        return data;
+        return userId;
+    }else{
+        return ["Username is already in use."]
     }
 }
 

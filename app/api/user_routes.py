@@ -69,9 +69,10 @@ def new_profile():
 
 #Edit a user profile
 
-@user_routes.route('/edit/<int:id>', methods=['PUT'])
+@user_routes.route('/<int:id>/edit', methods=['PUT'])
 @login_required
 def edit_profile(id):
+    print("start edit???")
     if authenticate():
         form = UserProfileForm()
         profile = User.query.get(id)
@@ -79,13 +80,11 @@ def edit_profile(id):
             return {'errors': ['The profile does not exist']}, 401
         form['csrf_token'].data = request.cookies['csrf_token']
         data = form.data
+
         if profile and form.validate_on_submit():
             profile.username = data['username']
-            profile.first_name = data['first_name']
-            profile.last_name = data['last_name']
-            profile.email_address = data['email_address']
+            profile.portrait = data['portrait']
             db.session.commit()
-            user = User.query.get(id)
             # reviews = Review.query.filter(Review.user_id == user.id).all()
             # review_obj = [review.to_dict() for review in reviews]
             return profile.to_dict()
