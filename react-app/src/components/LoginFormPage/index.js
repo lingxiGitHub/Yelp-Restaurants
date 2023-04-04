@@ -23,7 +23,7 @@ function LoginFormPage() {
 
   return (
     <>
-      <h1 className="logintext">Log In to Yelp</h1>
+      <h1 className="logintext">Log In to LSCX</h1>
       <form onSubmit={handleSubmit}>
         <div className="errors">
           {errors.map((error, idx) => (
