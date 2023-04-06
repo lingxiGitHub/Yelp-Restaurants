@@ -10,10 +10,17 @@
     border-radius: 5px;
     text-overflow: ellipsis;
     margin-left: 3px;
-
+    height: 25px;
 
 }
+.add-restaurant-form select {
+    width: 290px;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+    margin-left: 3px;
+    height: 25px;
 
+}
 
 .add-restaurant-form button {
     display: block;

@@ -106,6 +106,8 @@ a.visited {
   width: 50px;
   /* position: absolute; */
   background-color: white;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .signup-button {

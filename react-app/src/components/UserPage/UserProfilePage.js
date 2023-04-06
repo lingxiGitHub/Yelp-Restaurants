@@ -129,7 +129,7 @@ export default function UserProfilePage() {
                 {reviews.map(rev => (
                     <div className="width" key={rev.id}>
                         <div className="reviewscontainer">
-                            <NavLink to={`/${rev.restaurant_id}`}>
+                            <NavLink to={`/single/${rev.restaurant_id}`}>
                                 <p className="restaurantname">{rev.restaurant.name}</p>
                             </NavLink>
                             <div className="amountstars">Rating:  {ratings(parseInt(rev.rating))}</div>
