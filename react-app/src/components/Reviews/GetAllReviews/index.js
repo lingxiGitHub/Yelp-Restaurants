@@ -24,7 +24,7 @@ export default function GetAllReviews({ restaurantId }) {
     dispatch(fetchAllReviewsByRestaurantId(restaurantId))
   }, [dispatch])
   const reviews = Object.values(allReviews);
-  // console.log("reviews ", reviews)
+  console.log("reviews ", reviews)
 
   let userReview = null;
   let isOwnedBySessionUser = false;
@@ -56,7 +56,8 @@ export default function GetAllReviews({ restaurantId }) {
           <div className="single-review">
             <div className="review-user-data">
               <div >
-                <img src="https://a0.muscache.com/defaults/user_pic-225x225.png" alt="" />
+                {/* <img src="https://a0.muscache.com/defaults/user_pic-225x225.png" alt="" /> */}
+                <img src={review.user.portrait} alt=""/>
               </div>
               <div>
                 {/* <div className="user-title">{review.user.first_name} {review.user.last__name}</div> */}
