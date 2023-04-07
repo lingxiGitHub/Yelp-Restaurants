@@ -15,41 +15,29 @@ function SignupFormPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  // if (sessionUser) return <Redirect to="/" />;
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (password === confirmPassword) {
-  //       const data = await dispatch(signUp(username, email_address, first_name, last_name, password));
-  //       if (data) {
-  //         setErrors(data)
-  //       }
-  //   } else {
-  //       setErrors(['Confirm Password field must be the same as the Password field']);
-  //   }
-  // };
-
-  useEffect(() => {
-    const validationErr = []
-    if(username.length < 4 || username.length > 60) validationErr.push('Username must be between 4 and 60 characters')
-    if(password !== confirmPassword) validationErr.push('Passwords are not equivalent')
-    if(!email_address.includes('@')) validationErr.push('Please enter a valid email address')
-    if(first_name.length < 1 || first_name.length > 50) validationErr.push('First name must be between 1 and 50 characters long')
-    if(last_name.length < 1 || last_name.length > 50) validationErr.push('Last name must be between 1 and 50 characters long')
-    setErrors(validationErr)
-  }, [username, email_address, first_name, last_name, password, confirmPassword])
-
   const uponSignUp = async (e) => {
-    if(errors.length) return
-    if(password === confirmPassword){
-      const data = await dispatch(signUp(email_address, username, first_name, last_name, password));
-      if(data){
-        setErrors(data)
+    const regex = new RegExp('.+@.+\\..+')
+		const isvalidEmail = regex.test(email_address)
+    e.preventDefault();
+    if (password === confirmPassword){
+      if(!isvalidEmail){
+        setErrors(["Please enter a valid email address"])
+      }else if (username.length < 4 || username.length > 60){
+				setErrors(["Username must be between 4 and 60 characters"])
+      }else if(first_name.length < 1 || first_name.length > 50){
+        setErrors(["First name must be between 1 and 50 characters long"])
+      }else if(last_name.length < 1 || last_name.length > 50){
+        setErrors(["Last name must be between 1 and 50 characters long"])
+      }else {
+        const data = await dispatch(signUp(email_address, username, first_name, last_name, password));
+        if(data){
+          setErrors(data)
+        }
       }
-    } else {
-      return
+    }else{
+      setErrors(["Confirm Password field must be the same as the Password field"])
     }
-  };
+  }
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -63,62 +51,76 @@ function SignupFormPage() {
             <div className="error" key={idx}>{error}</div>))}
         </div>
         <div className="autharea">
-          <div className="authdeets">
-            <input
-              className="inputdeet"
-              type="text"
-              name="first_name"
-              placeholder="First Name"
-              value={first_name}
-              onChange={(e) => setFirst_Name(e.target.value)}
-              required
-            />
-            <input
-              className="inputdeet"
-              type="text"
-              name="last_name"
-              placeholder="Last Name"
-              value={last_name}
-              onChange={(e) => setLast_Name(e.target.value)}
-              required
-            />
-            <input
-              className="inputdeet"
-              type="text"
-              name="email_address"
-              placeholder="Email"
-              value={email_address}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              className="inputdeet"
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-            <input
-              className="inputdeet"
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <input
-              className="inputdeet"
-              type="password"
-              name="confirm password"
-              placeholder="Confirm Password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          <button className="sibutton" type="submit">Sign Up</button>
+          <div className="authdeets-signup">
+            <div className="autharea-items">
+              <span>first_name</span>
+              <input
+                className="inputdeet"
+                type="text"
+                name="first_name"
+                value={first_name}
+                onChange={(e) => setFirst_Name(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="autharea-items">
+              <span>last_name</span>
+              <input
+                className="inputdeet"
+                type="text"
+                name="last_name"
+                value={last_name}
+                onChange={(e) => setLast_Name(e.target.value)}
+                required
+              />
+            </div>
+            <div className="autharea-items">
+              <span>email_address</span>
+              <input
+                className="inputdeet"
+                type="text"
+                name="email_address"
+                value={email_address}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="autharea-items">
+              <span>username</span>
+              <input
+                className="inputdeet"
+                type="text"
+                name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+            <div className="autharea-items">
+              <span>password</span>
+              <input
+                className="inputdeet"
+                type="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="autharea-items">
+              <span>confirm password</span>
+              <input
+                className="inputdeet"
+                type="password"
+                name="confirm password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
+
+            <button className="sibutton" type="submit">Sign Up</button>
           </div>
           <div className="redcarpetpic">
             <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"></img>
