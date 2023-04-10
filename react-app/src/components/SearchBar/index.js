@@ -49,10 +49,7 @@ function RestaurantBySearch() {
                             <div className='restaurant-infooooo'>
                                 <div className='restaurant-info1'>
                                     <div className='search-restaurant-name'><strong>{el.name}</strong></div>
-                                    {/* <div className="summary-line">
-                                        <span> <i class="fa-solid fa-star"></i>{singleRestaurant.avgStarRating}</span>
-                                        <span>{singleRestaurant.numReviews} reviews</span>
-                                    </div> */}
+                             
                                     <div className='search-restaurant-price-city'>{el.price} · {el.city}</div>
                                 </div>
                                 <div className='restaurant-info2'>

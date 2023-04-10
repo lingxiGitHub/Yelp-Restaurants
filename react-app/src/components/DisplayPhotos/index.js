@@ -4,9 +4,6 @@ import { getRestaurantPhotos, deletePhotoThunk } from "../../store/RestaurantPho
 import { useEffect } from "react";
 import { useState } from "react";
 import { useModal } from "../../context/Modal";
-// import { IconName } from "react-icons/fa"；
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import trashCan from "./trash-can.svg"
 
 

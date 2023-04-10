@@ -53,7 +53,7 @@ def search_restaurant(keyword):
 
   return data
 
-  return {"keyword": [keyword.to_dict() for keyword in queried_restaurants]}
+ 
 
   # ------------------------------------ search route -----------------------------------------
 

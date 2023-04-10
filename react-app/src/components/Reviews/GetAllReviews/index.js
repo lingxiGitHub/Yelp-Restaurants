@@ -55,15 +55,17 @@ export default function GetAllReviews({ restaurantId }) {
         <div className="single-review-container" key={review.id}>
           <div className="single-review">
             <div className="review-user-data">
-              <div >
+              {/* <div > */}
                 {/* <img src="https://a0.muscache.com/defaults/user_pic-225x225.png" alt="" /> */}
-                <img src={review.user.portrait} alt=""/>
-              </div>
-              <div>
+                <img className="review-photo" src={review.user.portrait} alt=""/>
+              {/* </div> */}
+              <div className="review-right-section">
                 {/* <div className="user-title">{review.user.first_name} {review.user.last__name}</div> */}
-                <NavLink to={`/users/get/${review.user_id}`}>{review.user.username}</NavLink>
+                <NavLink id="review-user-name" to={`/users/get/${review.user_id}`}>{review.user.username}</NavLink>
+              
                 <div className="review-time">{new Date(review.updatedAt).toLocaleDateString("en-US", options)}</div>
                 <div><RatingStar size="15" rating={review.rating} /></div>
+         
               </div>
 
             </div>

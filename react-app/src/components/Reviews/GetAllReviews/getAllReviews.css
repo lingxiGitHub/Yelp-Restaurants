@@ -72,5 +72,30 @@
 .review-body {
   font-size: 14px;
   font-weight: 400;
-  margin: 15px;
+  margin: 15px 0px;
+  color: rgb(45, 46, 47)
+}
+
+
+img.review-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+
+#review-user-name {
+  margin: 0px;
+  padding: 0px;
+}
+
+.review-time-star {
+  padding: 0px 10px;
+}
+
+.review-right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 64px;
 }

@@ -205,13 +205,7 @@ export default function restaurantsReducer(state = initialState, action) {
             }
         }
 
-        //  case ADD_RESTAURANT: {
-        //     const newSpotState = { ...state }
-        //     newSpotState[action.spot.id] = action.spot
-
-        //     return newSpotState
-
-        // }
+      
 
         case UPDATE_RESTAURANT: {
             const updateRestaurantState = { ...state }

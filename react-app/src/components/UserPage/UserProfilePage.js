@@ -92,6 +92,10 @@ export default function UserProfilePage() {
     //     )
     // }
 
+
+
+
+
     return (
         isLoaded && (
             <div className="mainlayer">
@@ -99,22 +103,27 @@ export default function UserProfilePage() {
                     <div className="topmost">
                         <div className="userinfo">
                             <div className="portrait-and-info">
-                            <img className="user-portrait" src={`${user.user.portrait}`} alt="" />
+                                <img className="user-portrait" src={`${user.user.portrait}`} alt="" />
                                 {/* <img className="user-portrait" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWJzdHJhY3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" /> */}
                                 <div className="stats">
-                                    <div className="name">
+                                    <div id="name">
                                         {user.user.username}
                                     </div>
-                                    <div className="reviews">
-                                        {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}
+                                    <div id="reviews">
+                                        {reviews.length} {reviews.length === 1 ? 'Review' : 'Reviews'}
                                     </div>
+
                                 </div>
                             </div>
-                            {sessionUser && user.user.id == sessionUser.id ? <div className="update-userprofile"><OpenModalButton
-                                buttonText="Update User"
-                                // onItemClick={closeMenu}
-                                modalComponent={<UpdateProfile user={user.user}/>}
-                            /></div> : ""}
+                            {sessionUser && user.user.id == sessionUser.id ?
+                                <div className="update-userprofile">
+                                    <i class="far fa-edit"></i>
+                                    <OpenModalButton
+                                        buttonText="Update Your Profile"
+                                        // onItemClick={closeMenu}
+                                        className="update-profile-button"
+                                        modalComponent={<UpdateProfile user={user.user} />}
+                                    /></div> : ""}
                         </div>
                     </div>
                     {/* {sessionUser !== null && sessionUser.id === parseInt(userId) && <div className="belowprofpic">
@@ -122,22 +131,30 @@ export default function UserProfilePage() {
                 </div>} */}
                 </div>
 
-
-                <div class="horizontalline">
-                    <div className="midpart">Reviews</div> <hr class="horizontal" />
-                </div>
-                {reviews.map(rev => (
-                    <div className="width" key={rev.id}>
-                        <div className="reviewscontainer">
-                            <NavLink to={`/single/${rev.restaurant_id}`}>
-                                <p className="restaurantname">{rev.restaurant.name}</p>
-                            </NavLink>
-                            <div className="amountstars">Rating:  {ratings(parseInt(rev.rating))}</div>
-                            <p className="showit">Review:</p><div>{rev.review}</div>
-                            <div><hr className="inbetween"></hr></div>
-                        </div>
+                <div>
+                    <div class="horizontalline">
+                        <div className="midpart">Reviews</div>
+                        {/* <hr class="horizontal" /> */}
+                        {/* <hr className="inbetween"></hr> */}
                     </div>
-                ))}
+                    {reviews.map(rev => (
+                        <div className="width" key={rev.id}>
+
+
+
+                            <div className="reviewscontainer">
+                                <NavLink to={`/single/${rev.restaurant_id}`}>
+                                    <p className="restaurantname">{rev.restaurant.name}</p>
+                                </NavLink>
+                                <div className="amountstars">Rating:  {ratings(parseInt(rev.rating))}</div>
+                                <p className="showit">Review:</p><div>{rev.review}</div>
+                                <div><hr className="inbetween"></hr></div>
+                            </div>
+                        </div>
+                    ))}
+
+                </div>
+
             </div>
         ))
 }

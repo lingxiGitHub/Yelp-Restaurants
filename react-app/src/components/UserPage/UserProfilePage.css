@@ -13,38 +13,50 @@
 }
 
 .yelpstar {
-    width: 2%;
+    width: 4%;
 
 }
+
 .user-portrait {
-    width: 20%;
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
 }
 
 .topmost {
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     background-color: rgba(0, 0, 0, .05);
+    height: 150px;
 }
 
-.portrait-and-info{
+.portrait-and-info {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
+
 .userinfo {
     position: relative;
-    left: 400px;
+    /* left: 400px; */
     display: flex;
+    /* justify-content: center; */
     flex-direction: row;
     width: 60%;
     align-items: center;
     justify-content: space-around;
 }
+
 .update-userprofile {
     margin-right: 30px;
+    display: flex;
+    align-items: center;
+    color: rgb(0, 115, 187);
 }
+
 .update-userprofile button {
     width: 140px;
 }
@@ -60,18 +72,21 @@
 
 .stats {
     margin: 50px 0px 10px 70px;
+    display: flex;
+    flex-direction: column;
 }
 
-.name {
-    font-size: 27px;
+#name {
+    font-size: 30px;
+    font-weight: 700;
     font-weight: bold;
     color: black;
     font-family: Helvetica
 }
 
-.reviews {
-    font-size: 17px;
-    font-weight: bold;
+#reviews {
+    font-size: 14px;
+    font-weight: 400;
     color: black;
     margin-top: 20px;
     display: flex;
@@ -118,11 +133,13 @@
     margin-top: 30px;
     margin-right: 20px;
     margin: 0px;
+    margin-top: 15px;
 }
 
 .width {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -131,9 +148,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* align-items: center; */
     /* margin: 40px 0px 0px 10px; */
-    margin-top: 40px;
-    margin-left: 485px;
+    /* margin-top: 40px;
+    margin-left: 485px; */
 }
 
 .restaurantname {
@@ -147,6 +167,7 @@
     display: flex;
     flex-direction: row;
     font-weight: bold;
+    align-items: center;
 }
 
 .showit {
@@ -168,4 +189,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+button.update-profile-button {
+    border: none;
+    background-color: transparent;
+    /* width: 220px;
+    height: 20px; */
+    color: rgb(0, 115, 187);
+    font-weight: 900;
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
 }
