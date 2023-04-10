@@ -76,13 +76,16 @@ a.visited {
 
 .navigationBar {
   font-family: Helvetica;
-  width: 100%;
+  width: 720px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
   align-items: center;
   margin-top: 25px;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
 }
 

@@ -75,22 +75,23 @@ function AddRestaurantModal() {
                 </ul>
 
 
-                <label>
-                    <span>Name</span>
+      
+                    {/* <span>Name</span> */}
                     <input
                         type="text"
                         value={name}
+                        placeholder="Business Name"
                         onChange={(e) => setName(e.target.value)}
                         required
 
                     />
 
-                </label>
+       
 
-                <label>
-                    <span>Price</span>
+                    {/* <span>Price</span> */}
                     <select
                         onChange={(e) => setPrice(e.target.value)}
+                        // placeholder="Price Range"
                         value={price}
                     >
                         <option value="$">$</option>
@@ -101,120 +102,114 @@ function AddRestaurantModal() {
 
                     </select>
 
-                </label>
-
-                <label>
-                    <span>Address</span>
+               
+                    {/* <span>Address</span> */}
                     <input
                         type="text"
+                        placeholder="Address"
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         required
 
                     />
 
-                </label>
-
-                <label>
-                    <span>City</span>
+            
+                    {/* <span>City</span> */}
                     <input
                         type="text"
+                        placeholder="City"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         required
 
                     />
 
-                </label>
-
-                <label>
-                    <span>State</span>
+         
+                    {/* <span>State</span> */}
                     <input
                         type="text"
+                        placeholder="State"
                         value={state}
                         onChange={(e) => setState(e.target.value)}
                         required
 
                     />
 
-                </label>
-
-                <label>
-                    <span>Zipcode</span>
+            
+                    {/* <span>Zipcode</span> */}
                     <input
                         type="number"
+                        placeholder="Zip Code"
                         value={zipcode}
                         onChange={(e) => setZipcode(e.target.value)}
                         required
 
                     />
 
-                </label>
-
-                <label>
-                    <span>Country</span>
+                    {/* <span>Country</span> */}
                     <input
                         type="text"
+                        placeholder="Country"
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
                         required
 
                     />
 
-                </label>
-
-                <label>
-                    <span>Phone number</span>
+         
+                    {/* <span>Phone number</span> */}
                     <input
                         type="text"
+                        placeholder="Phone Number"
                         value={phone_number}
                         onChange={(e) => setPhone_number(e.target.value)}
                         required
 
                     />
 
-                </label>
 
 
 
 
-                <label>
-                    <span>website</span>
+                    {/* <span>website</span> */}
                     <input
                         type="text"
+                        placeholder="Website"
                         value={website}
                         onChange={(e) => setWebsite(e.target.value)}
                         required
 
                     />
 
-                </label>
 
-                <label>
-                    <span>Preview Image Url</span>
+
+           
+                    {/* <span>Preview Image Url</span> */}
                     <input
                         type="text"
+                        placeholder="Preview Image Url"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                         required
 
                     />
 
-                </label>
+   
 
-                <label>
-                    <span>Description</span>
+       
+                    {/* <span>Description</span> */}
                     <input
                         type="textarea"
+                        placeholder="Description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         required
 
                     />
 
-                </label>
+        
 
-                <button type="submit">Add Business</button>
+                <button className="add-biz-button" type="submit">Add Business</button>
             </form>
         </>
     )

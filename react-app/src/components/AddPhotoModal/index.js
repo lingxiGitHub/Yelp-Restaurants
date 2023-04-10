@@ -45,9 +45,10 @@ function AddPhotoModal({ restaurantId }) {
                 </ul>
 
                 <label>
-                    url
+
                     <input
                         type="text"
+                        placeholder="Photo Url"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                         required

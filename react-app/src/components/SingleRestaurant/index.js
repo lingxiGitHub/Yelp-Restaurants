@@ -31,8 +31,9 @@ function SingleRestaurant() {
         // console.log("singleRestaurantState", state)
         return state.Restaurants.singleRestaurant
     })
-    // console.log("singleRestaurant at component", singleRestaurant)
+    console.log("singleRestaurant at component", singleRestaurant)
 
+    // const ownerId = 2
 
     // console.log("here???")
     const dispatch = useDispatch()
@@ -118,28 +119,32 @@ function SingleRestaurant() {
                                     />
 
 
-                             
-                                    <OpenModalButton
-                                        buttonText="Edit Restaurant"
-                                        modalComponent={<EditRestaurant singleRestaurant={singleRestaurant} />}
-                                    />
+                                    {sessionUser.id == singleRestaurant.user_id && (
+                                        <>
+                                            <OpenModalButton
+                                                buttonText="Edit Restaurant"
+                                                modalComponent={<EditRestaurant singleRestaurant={singleRestaurant} />}
+                                            />
 
 
-                                    <button
-                                        onClick={() => setShowDeleteEdit(!showDeleteEdit)}
-                                    >Delete Restaurant</button>
+                                            <button
+                                                onClick={() => setShowDeleteEdit(!showDeleteEdit)}
+                                            >Delete Restaurant</button>
 
-                                    {showDeleteEdit && (
-                                        <DeleteRestaurant
-                                            singleRestaurant={singleRestaurant}
-                                            sessionUser={sessionUser}
-                                            dispatch={dispatch}
-                                            history={history}
-                                            restaurantId={restaurantId}
-                                            setShowDeleteEdit={setShowDeleteEdit}
+                                            {showDeleteEdit && (
+                                                <DeleteRestaurant
+                                                    singleRestaurant={singleRestaurant}
+                                                    sessionUser={sessionUser}
+                                                    dispatch={dispatch}
+                                                    history={history}
+                                                    restaurantId={restaurantId}
+                                                    setShowDeleteEdit={setShowDeleteEdit}
 
-                                        />
+                                                />
+                                            )}
+                                        </>
                                     )}
+
                                 </div>
                                 </>
 
