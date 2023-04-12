@@ -15,9 +15,9 @@ function Restaurant({ restaurant }) {
             <div className="restaurant-card">
                 <img className="square" src={restaurant.previewImage} alt="" />
                 <div className="summary">
-                    <span>{restaurant.id}. </span>
-                    <span>{restaurant.name}</span>
-                    <div><RatingStar size="20" rating={restaurant.avgRating}/></div>
+                    <span className="bold-name">{restaurant.id}. </span>
+                    <span className="bold-name">{restaurant.name}</span>
+                    <div className="stars-home"><RatingStar size="20" rating={restaurant.avgRating}/></div>
                     <div className="small-words">
                         <div>{restaurant.price} <b>·</b> {restaurant.city}</div>
                         <div><span className="green-word">Open</span> until 9:30PM</div>
