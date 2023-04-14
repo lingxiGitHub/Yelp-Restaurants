@@ -9,7 +9,7 @@ import trashCan from "./trash-can.svg"
 
 export default function DisplayPhotos({ singleRestaurant }) {
 
-    console.log("@@@@@@", singleRestaurant.id)
+    // console.log("@@@@@@", singleRestaurant.id)
     const { closeModal } = useModal()
     const [isLoaded, setIsLoaded] = useState(false);
     const sessionUser = useSelector(state => state.session.user);

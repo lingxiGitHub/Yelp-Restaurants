@@ -10,7 +10,7 @@ export default function UpdateProfile({user}){
   const dispatch = useDispatch()
   const history = useHistory()
   const { closeModal } = useModal()
-  console.log("user from UserProfilePage", user)
+  // console.log("user from UserProfilePage", user)
   const [username, setUsername] = useState(user.username)
   const [portrait, setPortrait] = useState(user.portrait)
   const [errors, setErrors] = useState([])

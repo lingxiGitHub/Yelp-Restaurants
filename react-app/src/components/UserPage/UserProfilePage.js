@@ -53,7 +53,7 @@ export default function UserProfilePage() {
     let reviews = []
 
     let user = useSelector((state) => state.user)
-    console.log("user", user)
+    // console.log("user", user)
 
     if (isLoaded) {
         let userTotalReviews = user.user.reviews

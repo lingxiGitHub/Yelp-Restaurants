@@ -31,7 +31,7 @@ function SingleRestaurant() {
         // console.log("singleRestaurantState", state)
         return state.Restaurants.singleRestaurant
     })
-    console.log("singleRestaurant at component", singleRestaurant)
+    // console.log("singleRestaurant at component", singleRestaurant)
 
     // const ownerId = 2
 
@@ -171,7 +171,7 @@ function SingleRestaurant() {
 
                         <div className="bottom-right-section">
                             <div className="side-bar">
-                                {console.log(singleRestaurant)}
+                             
                                 <div className="website-line"><a className="bottom-border" href={singleRestaurant.website}>{singleRestaurant.website}</a>{websiteIcon}</div>
 
                                 <div className="bottom-border phone-line"><span>{singleRestaurant.phone_number}</span>{phoneIcon}</div>

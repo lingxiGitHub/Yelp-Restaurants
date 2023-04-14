@@ -92,9 +92,10 @@ export const addRestaurantThunk = (newRestaurant) => async dispatch => {
         // console.log("createdRestaurant", createdRestaurant)
         createdRestaurantId = createdRestaurant.id
         // console.log("createdRestaurantId", createdRestaurantId)
-    }else{
-        console.log("add restaurant failed here")
     }
+    // else{
+    //     console.log("add restaurant failed here")
+    // }
 
     if (createdRestaurantId) {
 
