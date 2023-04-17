@@ -53,7 +53,7 @@ function SignupFormPage() {
         <div className="autharea">
           <div className="authdeets-signup">
             <div className="autharea-items">
-              <span>first_name</span>
+              <span>First Name</span>
               <input
                 className="inputdeet"
                 type="text"
@@ -65,7 +65,7 @@ function SignupFormPage() {
             </div>
 
             <div className="autharea-items">
-              <span>last_name</span>
+              <span>Last Name</span>
               <input
                 className="inputdeet"
                 type="text"
@@ -76,7 +76,7 @@ function SignupFormPage() {
               />
             </div>
             <div className="autharea-items">
-              <span>email_address</span>
+              <span>Email Address</span>
               <input
                 className="inputdeet"
                 type="text"
@@ -87,7 +87,7 @@ function SignupFormPage() {
               />
             </div>
             <div className="autharea-items">
-              <span>username</span>
+              <span>Username</span>
               <input
                 className="inputdeet"
                 type="text"
@@ -98,7 +98,7 @@ function SignupFormPage() {
               />
             </div>
             <div className="autharea-items">
-              <span>password</span>
+              <span>Password</span>
               <input
                 className="inputdeet"
                 type="password"
@@ -109,7 +109,7 @@ function SignupFormPage() {
               />
             </div>
             <div className="autharea-items">
-              <span>confirm password</span>
+              <span>Confirm Password</span>
               <input
                 className="inputdeet"
                 type="password"
