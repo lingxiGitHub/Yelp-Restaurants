@@ -22,8 +22,6 @@ function RestaurantBySearch() {
     const restaurant = useSelector(state => state.Restaurants.searchedRestaurants)
     const restaurantArr = Object.values(restaurant)
 
-    // if(!restaurantArr) return null
-    // if(!singleRestaurant) return null
 
 
     return restaurantArr &&(

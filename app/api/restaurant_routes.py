@@ -20,7 +20,7 @@ def search_restaurant(keyword):
 
   # print(keyword)
   # queried_restaurants = Restaurant.query.filter(Restaurant.name.startswith(f"%{keyword}%")).all()
-  queried_restaurants = Restaurant.query.filter(Restaurant.name.startswith(keyword)).all()
+  queried_restaurants = Restaurant.query.filter(Restaurant.name.ilike(f"%{keyword}%")).all()
 
   for restaurant in queried_restaurants:
     
